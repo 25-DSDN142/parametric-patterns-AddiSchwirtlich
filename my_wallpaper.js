@@ -1,7 +1,11 @@
 //your parameter variables go here!
-let bodyX = 450; // move bird left and right
-let bodyY = 450; //  move bird up and down
-let scaleFactor = 0.2; // to decrease size of bird
+let bodyX = 200; // move bird left and right
+let bodyY = 200; //  move bird up and down
+let scaleFactor = 0.5; // to increase/decrease size of bird
+
+let cubeX = 20; // move cube left and right
+let cubeY = 20; // move cube up and down
+let cubeFactor = 8; // to increase/decrease cube size
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -13,7 +17,7 @@ function setup_wallpaper(pWallpaper) {
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 50;
+  pWallpaper.grid_settings.row_offset  = 100;
 }
 
 function wallpaper_background() {
@@ -146,12 +150,124 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   endShape(CLOSE);
 
-  //fifth feather
+  // fifth feather
   beginShape();
 
     vertex((bodyX - 2) * scaleFactor,(bodyY + 5) * scaleFactor); // (48,55)
     vertex((bodyX + 5) * scaleFactor,(bodyY + 5) * scaleFactor); // (55,55)
     vertex((bodyX + 8) * scaleFactor,(bodyY + 10) * scaleFactor); // (58,60)
+
+  endShape(CLOSE);
+
+  fill(250, 157, 35); // orange coloyr
+
+  // cube shape
+  beginShape();
+
+    vertex((cubeX - 10) * cubeFactor,cubeY * cubeFactor); // (10,20)
+    vertex((cubeX - 5) * cubeFactor,(cubeY + 3) * cubeFactor); // (15,23)
+    vertex(cubeX * cubeFactor,cubeY * cubeFactor); // (20,20)
+    vertex(cubeX * cubeFactor,(cubeY - 5) * cubeFactor); // (20,15)
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 8) * cubeFactor); // (15,12)
+    vertex((cubeX - 10) * cubeFactor,(cubeY - 5) * cubeFactor); // (10,15)
+
+  endShape(CLOSE);
+
+  fill(212, 78, 11); // dark orange
+
+  beginShape();
+
+    vertex((cubeX - 10) * cubeFactor,(cubeY - 5) * cubeFactor); // (10,15)
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 2) * cubeFactor); // (15,18)
+    vertex((cubeX - 5) * cubeFactor,(cubeY + 3) * cubeFactor); // (15,23)
+    vertex((cubeX - 10) * cubeFactor,cubeY * cubeFactor); // (10,20)
+
+  endShape(CLOSE);
+
+  fill(255, 197, 135); // light orange
+
+  beginShape();
+
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 2) * cubeFactor); // (15,18)
+    vertex(cubeX * cubeFactor,(cubeY - 5) * cubeFactor); // (20,15)
+    vertex(cubeX * cubeFactor,cubeY * cubeFactor); // (20,20)
+    vertex((cubeX - 5) * cubeFactor,(cubeY + 3) * cubeFactor); // (15,23)
+
+  endShape(CLOSE);
+
+
+  beginShape();
+
+    vertex(120,140);
+    vertex(87,120);
+    vertex(120,100);
+    vertex(153,120);
+
+  endShape(CLOSE);
+
+  fill(19, 209, 66); // green colour
+
+  beginShape();
+
+    vertex(120,136);
+    vertex(92,120);
+    vertex(120,103);
+    vertex(147,120);
+
+  endShape(CLOSE);
+
+  fill(12, 40, 199); // blue colour
+
+  beginShape();
+
+    vertex(120,133);
+    vertex(97,120);
+    vertex(120,106);
+    vertex(142,120);
+
+  endShape(CLOSE);
+
+  fill(217, 41, 111); // hot pink colour
+
+  beginShape();
+
+  vertex(120,130);
+  vertex(102,120);
+  vertex(120,109);
+  vertex(138,120);
+
+  endShape(CLOSE);
+
+  fill(241, 250, 65); // yellow
+
+  beginShape();
+
+    vertex(120,127);
+    vertex(107,120);
+    vertex(120,112);
+    vertex(133,120);
+
+  endShape();
+
+  fill(23, 87, 29); // dark green
+
+  beginShape();
+
+    vertex(120,125);
+    vertex(110,120);
+    vertex(120,114);
+    vertex(130,120);
+
+  endShape(CLOSE);
+
+  fill(250, 23, 2);
+
+  beginShape();
+
+  vertex(120,123);
+  vertex(114,120);
+  vertex(120,116);
+  vertex(126,120);
 
   endShape(CLOSE);
 
