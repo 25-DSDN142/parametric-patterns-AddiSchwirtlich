@@ -198,10 +198,10 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   beginShape();
 
-    vertex(120,140);
-    vertex(87,120);
-    vertex(120,100);
-    vertex(153,120);
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 2.5) * cubeFactor); // (120,140) (15,17.5)
+    vertex((cubeX - 9) * cubeFactor,(cubeY - 5) * cubeFactor); // (87,120) (11,15)
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 7.5) * cubeFactor); // (120,100) (15,12.5)
+    vertex((cubeX - 1) * cubeFactor,(cubeY - 5) * cubeFactor); // (153,120) (19,15)
 
   endShape(CLOSE);
 
@@ -209,10 +209,10 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   beginShape();
 
-    vertex(120,136);
-    vertex(92,120);
-    vertex(120,103);
-    vertex(147,120);
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 2.9) * cubeFactor); // (120,136) (15,17)
+    vertex((cubeX - 8.5) * cubeFactor,(cubeY - 5) * cubeFactor); // (92,120) (11.5,15)
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 7.1) * cubeFactor); // (120,103) (15,13)
+    vertex((cubeX - 1.5) * cubeFactor,(cubeY - 5) * cubeFactor); // (147,120) (18.5,15)
 
   endShape(CLOSE);
 
@@ -220,10 +220,10 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   beginShape();
 
-    vertex(120,133);
-    vertex(97,120);
-    vertex(120,106);
-    vertex(142,120);
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 3.3) * cubeFactor); // (120,133) (15,16.5)
+    vertex((cubeX - 8) * cubeFactor,(cubeY - 5) * cubeFactor); // (97,120) (12,15)
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 6.7) * cubeFactor); // (120,106) (15,13)
+    vertex((cubeX - 2) * cubeFactor,(cubeY - 5) * cubeFactor); // (142,120) (17.5,15)
 
   endShape(CLOSE);
 
@@ -231,43 +231,43 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   beginShape();
 
-  vertex(120,130);
-  vertex(102,120);
-  vertex(120,109);
-  vertex(138,120);
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 3.7) * cubeFactor); // (120,130) (15,16)
+    vertex((cubeX - 7.4) * cubeFactor,(cubeY - 5) * cubeFactor); // (102,120) (12.5,15)
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 6.4) * cubeFactor); // (120,109) (15,13.5)
+    vertex((cubeX - 2.6) * cubeFactor,(cubeY - 5) * cubeFactor); // (138,120) (17,15)
 
   endShape(CLOSE);
 
-  fill(241, 250, 65); // yellow
+  fill(255, 204, 36); // yellow colour
 
   beginShape();
 
-    vertex(120,127);
-    vertex(107,120);
-    vertex(120,112);
-    vertex(133,120);
-
-  endShape();
-
-  fill(23, 87, 29); // dark green
-
-  beginShape();
-
-    vertex(120,125);
-    vertex(110,120);
-    vertex(120,114);
-    vertex(130,120);
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 4.1) * cubeFactor); // (120,127) (15,15.8)
+    vertex((cubeX - 6.8) * cubeFactor,(cubeY - 5) * cubeFactor); // (107,120) (13.3,15)
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 6) * cubeFactor); // (120,112) (15,14)
+    vertex((cubeX - 3.2) * cubeFactor,(cubeY - 5) * cubeFactor); // (133,120) (16.6,15)
 
   endShape(CLOSE);
 
-  fill(250, 23, 2);
+  fill(23, 87, 29); // dark green colour
 
   beginShape();
 
-  vertex(120,123);
-  vertex(114,120);
-  vertex(120,116);
-  vertex(126,120);
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 4.3) * cubeFactor); // (120,125) (15,15.6)
+    vertex((cubeX - 6.4) * cubeFactor,(cubeY - 5) * cubeFactor); // (110,120) (13.7,15)
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 5.8) * cubeFactor); // (120,114) (15,14.2)
+    vertex((cubeX - 3.6) * cubeFactor,(cubeY - 5) * cubeFactor); // (130,120) (16.2,15)
+
+  endShape(CLOSE);
+
+  fill(250, 23, 2); // red colour
+
+  beginShape();
+
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 4.6) * cubeFactor); // (120,123) (15,15.4)
+    vertex((cubeX - 5.9) * cubeFactor,(cubeY - 5) * cubeFactor); // (114,120) (14.2,15)
+    vertex((cubeX - 5) * cubeFactor,(cubeY - 5.5) * cubeFactor); // (120,116) (15,14.5)
+    vertex((cubeX - 4.1) * cubeFactor,(cubeY - 5) * cubeFactor); // (126,120) (15.7,15)
 
   endShape(CLOSE);
 
