@@ -1,32 +1,52 @@
 //your parameter variables go here!
 let bodyX = 100; // move bird left and right
-let bodyY = 100; //  move bird up and down
+let bodyY = 90; //  move bird up and down
 let scaleFactor = 0.7; // to increase/decrease size of bird
 
 let cubeX = 20; // move cube left and right
 let cubeY = 20; // move cube up and down
-let cubeFactor = 8; // to increase/decrease cube size
+let cubeFactor = true; // to increase/decrease cube size
 
-let baseColour = '#b3e4e6'
-let shadeColour = '#4dacb0'
-let highlightColour = '#dff4f5'
+let baseColour = '#b3e4e6'; // base colour of cube
+let shadeColour = '#4dacb0'; // darker colour of cube
+let highlightColour = '#dff4f5'; // lightest colour of cube
 
+let insideCircle = '#c2ffff' // inside circle
+let outlineCircle = '#07525e' // outline darkest part of circle
+let bubbleCircles = '#1a8b9c' //  the four circle or bubbles
+
+let circleX = 50; // moves circle pattern left and right
+let circleY = 50; //  moves circle pattern up and down
+let scaleCircle = 40; // scales up or down the largest circle
+let fourCircle = 40 // scales up or down the four circles
+
+let backColour = '#48b2c2'
+
+if (cubeFactor == false) { // changes colour of cubes to pink
+  baseColour = '#e88ee8'
+  shadeColour = '#d17bd4'
+  highlightColour = '#e8cef0'
+  insideCircle = '#f6d5f7'
+  outlineCircle = '#5d075e'
+  bubbleCircles = '#ae30b3'
+  backColour = '#a96eb8'
+}
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
-  //pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 200;
-  pWallpaper.grid_settings.cell_height = 190;
-  pWallpaper.grid_settings.row_offset  = 160;
+  pWallpaper.grid_settings.cell_width  = 240;
+  pWallpaper.grid_settings.cell_height = 225;
+  pWallpaper.grid_settings.row_offset  = 110;
 }
 
 function wallpaper_background() {
-  background(180); //light blue colour
+  background(backColour); // light pink
 
 }
 
@@ -35,252 +55,110 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   
   DrawCube(5,5,4); // cube found on the top left corner ( rest of cube go from left )
 
-  DrawCube(15,5,4,cube2);
+  DrawCube(18.5,5.5,3); //small
 
   DrawCube(25,5,4);
 
-  DrawCube(35,5,4,cube2);
+  DrawCube(45,5.5,3); //small
 
   DrawCube(45,5,4);
 
-  DrawCube(55,5,4,cube2);
+  DrawCube(72,5.5,3); //small
 
   DrawCube(0,13,4);
 
-  DrawCube(10,13,4,cube2);
+  DrawCube(11.5,16.5,3); //small
 
   DrawCube(20,13,4);
 
-  DrawCube(30,13,4,cube2);
+  DrawCube(38.5,16.5,3); //small
 
   DrawCube(40,13,4);
 
-  DrawCube(50,13,4,cube2);
+  DrawCube(65,16.5,3); //small
 
   DrawCube(60,13,4);
 
-  DrawCube(5,21,4,cube2);
+  DrawCube(5,27,3); //small
 
   DrawCube(15,21,4);
 
-  DrawCube(25,21,4,cube2);
+  DrawCube(32,27,3); //small
 
   DrawCube(35,21,4);
 
-  DrawCube(45,21,4,cube2);
+  DrawCube(58.5,27,3); //small
 
   DrawCube(55,21,4);
 
-  DrawCube(0,29,4,cube2);
+  DrawCube(-1.5,37.5,3); //small
 
   DrawCube(10,29,4);
 
-  DrawCube(20,29,4,cube2);
+  DrawCube(25,37.5,3); //small
 
   DrawCube(30,29,4);
 
-  DrawCube(40,29,4,cube2);
+  DrawCube(51.5,37.5,3); //small
 
   DrawCube(50,29,4);
 
-  DrawCube(60,29,4,cube2);
+  DrawCube(78.5,37.5,3); //small
 
   DrawCube(5,37,4);
 
-  DrawCube(15,37,4,cube2);
+  DrawCube(18.5,48.5,3); //small
 
   DrawCube(25,37,4);
 
-  DrawCube(35,37,4,cube2);
+  DrawCube(45,48.5,3); //small
 
   DrawCube(45,37,4);
 
-  DrawCube(55,37,4,cube2);
+  DrawCube(72,48.5,3); //small
 
   DrawCube(0,45,4);
 
-  DrawCube(10,45,4,cube2);
+  DrawCube(11.5,59,3); //small
 
   DrawCube(20,45,4);
 
-  DrawCube(30,45,4,cube2);
+  DrawCube(38.5,59,3); //small
 
   DrawCube(40,45,4);
 
-  DrawCube(50,45,4,cube2);
+  DrawCube(65,59,3); //small
 
   DrawCube(60,45,4);
 
-  DrawCube(5,53,4,cube2);
+  DrawCube(5,69.5,3); //small
 
   DrawCube(15,53,4);
 
-  DrawCube(25,53,4,cube2);
+  DrawCube(31.5,69.5,3); //small
 
   DrawCube(35,53,4);
 
-  DrawCube(45,53,4,cube2);
+  DrawCube(58.5,69.5,3); //small
 
   DrawCube(55,53,4);
 
+  DrawCircle(50,45);
 
+  DrawBird(100,100,0.7);
 
-  fill(255);
-
-  // for the white outline / body of the bird
-  beginShape();
-
-    vertex((bodyX + 110) * scaleFactor,(bodyY + 100) * scaleFactor); // (160,150)
-    vertex((bodyX + 45) * scaleFactor,(bodyY + 55) * scaleFactor); // (95,105)
-    vertex((bodyX + 10) * scaleFactor,(bodyY + 55) * scaleFactor); // (60.105)
-    vertex(bodyX * scaleFactor,(bodyY + 50) * scaleFactor); // (50,100)
-    vertex((bodyX - 2) * scaleFactor,(bodyY + 40) * scaleFactor); // (48,90)
-    vertex((bodyX - 2) * scaleFactor,(bodyY - 10) * scaleFactor); // (48,40)
-    vertex((bodyX - 15) * scaleFactor,(bodyY - 20) * scaleFactor); // (35,30)
-    vertex((bodyX - 32) * scaleFactor,(bodyY - 10) * scaleFactor); // (18,40)
-    vertex((bodyX - 42) * scaleFactor,(bodyY + 5) * scaleFactor); // (8,55)
-    vertex((bodyX - 25) * scaleFactor,bodyY * scaleFactor); // (25,50)
-    vertex((bodyX - 15) * scaleFactor,(bodyY + 2) * scaleFactor); // (35,52)
-    vertex((bodyX - 15) * scaleFactor,(bodyY + 50) * scaleFactor); // (35,100)
-    vertex((bodyX - 14) * scaleFactor,(bodyY + 55) * scaleFactor); // (26,105)
-    vertex((bodyX - 10) * scaleFactor,(bodyY + 60) * scaleFactor); // (40,110)
-    vertex((bodyX + 5) * scaleFactor,(bodyY + 100) * scaleFactor); // (55,150)
-    vertex((bodyX + 20) * scaleFactor,(bodyY + 98) * scaleFactor); // (70,148)
-    vertex((bodyX + 35) * scaleFactor,(bodyY + 102) * scaleFactor); // (85,152)
-    vertex((bodyX + 45) * scaleFactor,(bodyY + 105) * scaleFactor); // (95,155)
-    vertex((bodyX + 55) * scaleFactor,(bodyY + 110) * scaleFactor); // (105,160)
-    vertex((bodyX + 50) * scaleFactor,(bodyY + 95) * scaleFactor); // (100,145)
-    vertex((bodyX + 70) * scaleFactor,(bodyY + 105) * scaleFactor); // (120,155)
-    vertex((bodyX + 65) * scaleFactor,(bodyY + 95) * scaleFactor); // (115,145)
-
-  endShape(CLOSE);
-
-
-
-  fill(250, 141, 105);// orange colour
-
-  // shape of the orange pattern on bird
-  beginShape();
-  
-    vertex((bodyX - 25) * scaleFactor,(bodyY - 6) * scaleFactor); // (25,44)
-    vertex((bodyX - 15) * scaleFactor,(bodyY - 2) * scaleFactor); // (35,48)
-    vertex((bodyX - 9) * scaleFactor,(bodyY - 12) * scaleFactor); // (41,38)
-    vertex((bodyX - 13) * scaleFactor,(bodyY - 15) * scaleFactor); // (37,35)
-    vertex((bodyX - 28) * scaleFactor,(bodyY - 10) * scaleFactor); // (22,40)
-    vertex((bodyX - 32) * scaleFactor,(bodyY - 5) * scaleFactor); // (18,45)
-
-  endShape(CLOSE);
-  
-  fill(184, 175, 173);// grey colour
-
-  // grey shading of the birds wings
-  beginShape();
-
-    vertex((bodyX + 57) * scaleFactor,(bodyY + 82) * scaleFactor); // (107,132)
-    vertex((bodyX + 55) * scaleFactor,(bodyY + 90) * scaleFactor); // (105,140)
-    vertex((bodyX + 40) * scaleFactor,(bodyY + 80) * scaleFactor); // (90,130)
-    vertex((bodyX + 37) * scaleFactor,(bodyY + 90) * scaleFactor); // (87,140)
-    vertex((bodyX + 11) * scaleFactor,(bodyY + 87) * scaleFactor); // (61,137)
-    vertex(bodyX * scaleFactor,(bodyY + 70) * scaleFactor); // (50,120)
-    vertex((bodyX + 8) * scaleFactor,(bodyY + 90) * scaleFactor); // (58,140)
-    vertex((bodyX + 41) * scaleFactor,(bodyY + 95) * scaleFactor); // (91,145)
-    vertex((bodyX + 42) * scaleFactor,(bodyY + 85) * scaleFactor); // (92,135)
-    vertex((bodyX + 60) * scaleFactor,(bodyY + 95) * scaleFactor); // (110,145)
-    vertex((bodyX + 60) * scaleFactor,(bodyY + 88) * scaleFactor); // (110,138)
-    vertex((bodyX + 110) * scaleFactor,(bodyY + 100) * scaleFactor); // (160,150)
- 
-  endShape(CLOSE);
-
-  // grey shading one the birds neck
-
-  beginShape();
-
-  vertex((bodyX - 15) * scaleFactor,(bodyY + 2.5) * scaleFactor); // (68,82) (85,102.5)
-  vertex((bodyX - 15) * scaleFactor,(bodyY + 10) * scaleFactor); // (68,88) (85,110)
-  vertex((bodyX - 7.5) * scaleFactor,(bodyY + 1.2) * scaleFactor); // (74,81) (92.5,101.2)
-
-  endShape(CLOSE);
-
-  fill(20, 18, 18);// black colour
-
-  // black colour patterning on bottom of birds wings
-  beginShape();
-
-    vertex((bodyX + 60) * scaleFactor,(bodyY + 88) * scaleFactor); // (110,138)
-    vertex((bodyX + 60) * scaleFactor,(bodyY + 95) * scaleFactor); // (110,145)
-    vertex((bodyX + 42) * scaleFactor,(bodyY + 85) * scaleFactor); // (92,135)
-    vertex((bodyX + 41) * scaleFactor,(bodyY + 95) * scaleFactor); // (91,145)
-    vertex((bodyX + 25) * scaleFactor,(bodyY + 92) * scaleFactor); // (75,142)
-    vertex((bodyX + 55) * scaleFactor,(bodyY + 110) * scaleFactor); // (105,160)
-    vertex((bodyX + 50) * scaleFactor,(bodyY + 95) * scaleFactor); // (100,145)
-    vertex((bodyX + 70) * scaleFactor,(bodyY + 105) * scaleFactor); // (120,155)
-    vertex((bodyX + 65) * scaleFactor,(bodyY + 95) * scaleFactor); // (115,145)
-    vertex((bodyX + 110) * scaleFactor,(bodyY + 100) * scaleFactor); // (160,150)
-  
-  endShape(CLOSE);
-
-  beginShape();
-
-
-
-
-  endShape(CLOSE);
-
-  // beginning feather found on the top most of head
-  beginShape();
-
-    vertex((bodyX - 15) * scaleFactor,(bodyY - 20) * scaleFactor); // (35,30)
-    vertex((bodyX - 14) * scaleFactor,(bodyY - 35) * scaleFactor); // (36,15)
-    vertex((bodyX - 8) * scaleFactor,(bodyY - 35) * scaleFactor); // (42,15)
-    vertex((bodyX - 14) * scaleFactor,(bodyY - 19) * scaleFactor); // (36,31)
-
-  endShape(CLOSE);
-
-  // second feather
-  beginShape();
-
-    vertex((bodyX - 10) * scaleFactor,(bodyY - 16) * scaleFactor); // (40,34)
-    vertex((bodyX + 4) * scaleFactor,(bodyY - 32) * scaleFactor); // (54,18)
-    vertex((bodyX + 15) * scaleFactor,(bodyY - 30) * scaleFactor); // (65,20)
-    vertex((bodyX - 9) * scaleFactor,(bodyY - 15) * scaleFactor); //(41,35)
-
-  endShape();
-  
-  // third feather
-  beginShape();
-
-    vertex((bodyX - 2) * scaleFactor,(bodyY - 10) * scaleFactor); // (48,40)
-    vertex((bodyX + 20) * scaleFactor,(bodyY - 24) * scaleFactor); // (70,26)
-    vertex((bodyX + 28) * scaleFactor,(bodyY - 15) * scaleFactor); // (78,35)
-    vertex((bodyX - 2) * scaleFactor,(bodyY - 8) * scaleFactor); // (48,42)
-
-  endShape(CLOSE);
-
-  //fourth feather
-  beginShape();
-
-    vertex((bodyX - 2) * scaleFactor,bodyY * scaleFactor); // (48,50)
-    vertex((bodyX + 15) * scaleFactor,(bodyY - 5) * scaleFactor); // (65,45)
-    vertex((bodyX + 20) * scaleFactor,bodyY * scaleFactor); // (70,50)
-
-  endShape(CLOSE);
-
-  // fifth feather
-  beginShape();
-
-    vertex((bodyX - 2) * scaleFactor,(bodyY + 5) * scaleFactor); // (48,55)
-    vertex((bodyX + 5) * scaleFactor,(bodyY + 5) * scaleFactor); // (55,55)
-    vertex((bodyX + 8) * scaleFactor,(bodyY + 10) * scaleFactor); // (58,60)
-
-  endShape(CLOSE);
 }
 
 function DrawBird(bodyX,bodyY,scaleFactor) {
 
+  stroke(24, 62, 97); // dark blue
+  strokeWeight(0.2);
 
   fill(255);
+  
 
   // for the white outline / body of the bird
+
   beginShape();
 
     vertex((bodyX + 110) * scaleFactor,(bodyY + 100) * scaleFactor); // (160,150)
@@ -421,11 +299,12 @@ function DrawBird(bodyX,bodyY,scaleFactor) {
 
 
 
-  function DrawCube (cubeX,cubeY,cubeFactor,) {
+  function DrawCube (cubeX,cubeY,cubeFactor) {
 
   fill(baseColour); // outside rim colour of top portion of cube
 
-  noStroke();
+
+  strokeWeight(0);
 
   // cube shape
   beginShape();
@@ -698,7 +577,25 @@ function DrawBird(bodyX,bodyY,scaleFactor) {
 
   }
 
+function DrawCircle(circleX,circleY) {
 
+  // pattern
+  
+  noStroke();
+
+  fill(bubbleCircles);
+  ellipse(circleX - 10,circleY + 65,fourCircle,fourCircle); // 40,115,40,40
+  ellipse(circleX + 100,circleY + 65,fourCircle,fourCircle); // 150,115,40,40
+  ellipse(circleX,circleY + 115,fourCircle,fourCircle); // 50,165,40,40
+  ellipse(circleX + 80,circleY + 18,fourCircle,fourCircle); // 130,65,40,40
+
+  fill(outlineCircle); // dark blue
+  ellipse(circleX + 45,circleY + 70,scaleCircle + 70,scaleCircle + 80); // dark circle outline (95,120,110,120)
+
+  fill(insideCircle); // light blue
+  ellipse(circleX + 45,circleY + 70,scaleCircle + 50,scaleCircle + 80); // light blue circle // (95,120,90,120)
+
+}
 
 
 
