@@ -1,11 +1,12 @@
 //your parameter variables go here!
-let bodyX = 100; // move bird left and right
-let bodyY = 90; //  move bird up and down
-let scaleFactor = 0.7; // to increase/decrease size of bird
+let bodyX = 140; // move bird left and right
+let bodyY = 115; //  move bird up and down
+let scaleFactor = 0.8; // to increase/decrease size of bird
 
-let cubeX = 20; // move cube left and right
-let cubeY = 20; // move cube up and down
-let cubeFactor = true; // to increase/decrease cube size
+let cubeX = 11; // move cube left and right
+let cubeY = 8; // move cube up and down
+let cubeFactor = 25; // to increase/decrease cube size
+
 
 let baseColour = '#b3e4e6'; // base colour of cube
 let shadeColour = '#4dacb0'; // darker colour of cube
@@ -15,22 +16,100 @@ let insideCircle = '#c2ffff' // inside circle
 let outlineCircle = '#07525e' // outline darkest part of circle
 let bubbleCircles = '#1a8b9c' //  the four circle or bubbles
 
-let circleX = 50; // moves circle pattern left and right
-let circleY = 50; //  moves circle pattern up and down
-let scaleCircle = 40; // scales up or down the largest circle
-let fourCircle = 40 // scales up or down the four circles
+let circleX = 100; // moves circle pattern left and right
+let circleY = 80; //  moves circle pattern up and down
+let scaleCircle = 20; // scales up or down the largest circle
 
-let backColour = '#48b2c2'
+let fourX = 50; //  mvoes four circles left and right
+let fourY = 50; // moves four circles up and down
+let fourCircleW = 55; // changes width of four circles
+let fourCircleL = 55; // changes length of four circles
 
-if (cubeFactor == false) { // changes colour of cubes to pink
-  baseColour = '#e88ee8'
-  shadeColour = '#d17bd4'
-  highlightColour = '#e8cef0'
-  insideCircle = '#f6d5f7'
-  outlineCircle = '#5d075e'
-  bubbleCircles = '#ae30b3'
-  backColour = '#a96eb8'
+let pattern2 = false; // if true creates a pattern (IF STATEMENT FOUND ON LINE 81)
+
+let pattern3 = false;// if true creates pattern 2
+
+let pattern4 = false;
+
+let blueColour = true; // if false changes to blue (IF STATEMENT FOUND ON LINE 44)
+
+let bodyColour = '#ffffff' // the body colour of bird
+let beakColour = '#fa8d69' // orange colour on face/beak of bird
+let featherColour = '#b8afad' // the grey colour on bird
+let darkColour = '#141212' // dark colour on bird
+let strokeColour = '#183e61' // changes stroke colour of bird
+
+let bodyColour2 = '#ffffff' // the body colour of bird2
+let beakColour2 = '#fa8d69' // orange colour on face/beak of bird2
+let featherColour2 = '#b8afad' // the grey colour on bird2
+let darkColour2 = '#141212' // dark colour on bird2
+let strokeColour2 = '#183e61' // changes stroke colour of bird2
+
+let backColour = '#48b2c2' // changes background colour
+
+let flamX = 50 // moves flamingo left and right
+let flamY = 50 //  moves flamingo up and down
+let flamFactor = 1 // scales flamingo up and down
+
+let flamColour = '#f598e4'
+let flamTip = '#212118'
+let flamBeak = '#ffffff'
+let flamOne = '#bdb182'
+let flamTwo = '#f5eed3'
+let flamHip = '#e07ece'
+
+let flamColour2 = '#ff0561'
+let flamTip2 = '#ff0561'
+let flamBeak2 = '#ff0561'
+let flamOne2 = '#ff0561'
+let flamTwo2 = '#ff0561'
+let flamHip2 = '#ff0561'
+
+if (cubeFactor > 24){
+  backColour = '#131361'
+  baseColour = '#131361'
+  shadeColour = '#131361'
+  highlightColour = '#3737b3'
+  insideCircle = '#0d0d4f'
+  outlineCircle = '#4f4fc9'
+  bubbleCircles = '#7f7feb'
+
 }
+
+if (blueColour == false) { // changes colour of cubes and circles to pink
+  baseColour = '#e6a45a'
+  shadeColour = '#d6c24d'
+  highlightColour = '#f08de8'
+  insideCircle = '#c4376b'
+  outlineCircle = '#f578a6'
+  bubbleCircles = '#fffcfd'
+  backColour = '#ff3d24'
+  
+}
+
+if (pattern4) {
+
+  backColour = '#ffd4f2'
+  outlineCircle = '#ffd4f2'
+  insideCircle = '#f542bf'
+  baseColour = '#ffd4f2'
+  shadeColour = '#f542bf'
+  highlightColour = '#ffd4f2'
+
+  flamColour = '#ffd4f8'
+  flamTip = '#ffd4f8'
+  flamBeak = '#ffd4f8'
+  flamOne = '#ffd4f8'
+  flamTwo = '#ffd4f8'
+  flamHip = '#ffd4f8'
+
+}
+
+
+
+
+
+// if statements found on line 90 and 192
 
 function setup_wallpaper(pWallpaper) {
   //pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -40,121 +119,218 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 240;
+  pWallpaper.grid_settings.cell_width  = 290;
   pWallpaper.grid_settings.cell_height = 225;
   pWallpaper.grid_settings.row_offset  = 110;
 }
 
 function wallpaper_background() {
-  background(backColour); // light pink
+  background(backColour); 
 
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
+
+  if (pattern2) {
   
-  DrawCube(5,5,4); // cube found on the top left corner ( rest of cube go from left )
+    DrawCube(5,5,4); // cube found on the top left corner ( rest of cube go from left )
 
-  DrawCube(18.5,5.5,3); //small
+    DrawCube(18.5,5.5,3); //small
 
-  DrawCube(25,5,4);
+    DrawCube(25,5,4);
 
-  DrawCube(45,5.5,3); //small
+    DrawCube(45,5.5,3); //small
 
-  DrawCube(45,5,4);
+    DrawCube(45,5,4);
 
-  DrawCube(72,5.5,3); //small
+    DrawCube(72,5.5,3); //small
 
-  DrawCube(0,13,4);
+    DrawCube(0,13,4);
 
-  DrawCube(11.5,16.5,3); //small
+    DrawCube(11.5,16.5,3); //small
 
-  DrawCube(20,13,4);
+    DrawCube(20,13,4);
 
-  DrawCube(38.5,16.5,3); //small
+    DrawCube(38.5,16.5,3); //small
 
-  DrawCube(40,13,4);
+    DrawCube(40,13,4);
 
-  DrawCube(65,16.5,3); //small
+    DrawCube(65,16.5,3); //small
 
-  DrawCube(60,13,4);
+    DrawCube(60,13,4);
 
-  DrawCube(5,27,3); //small
+    DrawCube(5,27,3); //small
 
-  DrawCube(15,21,4);
+    DrawCube(15,21,4);
 
-  DrawCube(32,27,3); //small
+    DrawCube(32,27,3); //small
 
-  DrawCube(35,21,4);
+    DrawCube(35,21,4);
 
-  DrawCube(58.5,27,3); //small
+    DrawCube(58.5,27,3); //small
 
-  DrawCube(55,21,4);
+    DrawCube(55,21,4);
 
-  DrawCube(-1.5,37.5,3); //small
+    DrawCube(-1.5,37.5,3); //small
 
-  DrawCube(10,29,4);
+    DrawCube(10,29,4);
 
-  DrawCube(25,37.5,3); //small
+    DrawCube(25,37.5,3); //small
 
-  DrawCube(30,29,4);
+    DrawCube(30,29,4);
 
-  DrawCube(51.5,37.5,3); //small
+    DrawCube(51.5,37.5,3); //small
 
-  DrawCube(50,29,4);
+    DrawCube(50,29,4);
 
-  DrawCube(78.5,37.5,3); //small
+    DrawCube(78.5,37.5,3); //small
 
-  DrawCube(5,37,4);
+    DrawCube(5,37,4);
 
-  DrawCube(18.5,48.5,3); //small
+    DrawCube(18.5,48.5,3); //small
 
-  DrawCube(25,37,4);
+    DrawCube(25,37,4);
 
-  DrawCube(45,48.5,3); //small
+    DrawCube(45,48.5,3); //small
 
-  DrawCube(45,37,4);
+    DrawCube(45,37,4);
 
-  DrawCube(72,48.5,3); //small
+    DrawCube(72,48.5,3); //small
 
-  DrawCube(0,45,4);
+    DrawCube(0,45,4);
 
-  DrawCube(11.5,59,3); //small
+    DrawCube(11.5,59,3); //small
 
-  DrawCube(20,45,4);
+    DrawCube(20,45,4);
 
-  DrawCube(38.5,59,3); //small
+    DrawCube(38.5,59,3); //small
 
-  DrawCube(40,45,4);
+    DrawCube(40,45,4);
 
-  DrawCube(65,59,3); //small
+    DrawCube(65,59,3); //small
+  
+    DrawCube(60,45,4);
 
-  DrawCube(60,45,4);
+    DrawCube(5,69.5,3); //small
 
-  DrawCube(5,69.5,3); //small
+    DrawCube(15,53,4);
 
-  DrawCube(15,53,4);
+    DrawCube(31.5,69.5,3); //small
 
-  DrawCube(31.5,69.5,3); //small
+    DrawCube(35,53,4);
 
-  DrawCube(35,53,4);
+    DrawCube(58.5,69.5,3); //small
 
-  DrawCube(58.5,69.5,3); //small
+    DrawCube(55,53,4);
 
-  DrawCube(55,53,4);
+    DrawFour(5,5,120,20);
 
-  DrawCircle(50,45);
+    DrawFour(5,5,20,140);
+      
+    DrawCircle(5,5,40,40);
 
-  DrawBird(100,100,0.7);
+    DrawBird(30,30,0.7);
+
+  }
+
+  if (pattern3) {
+
+    DrawCircle(5,5,50,250);
+
+    DrawCircle(5,5,50,200)
+
+    DrawCircle(5,5,50,125);
+
+    DrawCircle(5,5,50,62.5);
+
+    DrawCircle(5,5,50,31)
+
+    DrawFour(45,-50,20,20);
+
+    DrawFour(15,0,20,20);
+
+    DrawFlamingo2(25,5,1);
+
+    DrawFlamingo2(25,27,0.8);
+
+    flamColour2 = '#4f0938'
+    flamTip2 = '#4f0938'
+    flamBeak2 = '#4f0938'
+    flamOne2 = '#4f0938'
+    flamTwo2 = '#4f0938'
+    flamHip2 = '#4f0938'
+
+    DrawFlamingo(15,20,0.8)
+
+  }
+
+  if (cubeFactor > 24)  {
+
+    DrawCube(5,5,25);
+
+    DrawFour(-50,5,20,20);
+
+    DrawFour(-20,-40,50,50);
+
+    DrawCircle(-75,-45,-35,-35);
+
+    DrawCircle(35,-45,-35,-35);
+
+    DrawCircle(15,-90,-35,-35);
+
+    DrawCircle(-65,5,-35,-35);
+
+    DrawBird(5,-20,0.6);
+
+    DrawBird2(-50,35,0.8);
+    
+    DrawBird(-90,90,0.9);
+
+    bodyColour = '#e0d2f7'
+    beakColour = '#e0d2f7'
+    featherColour = '#e0d2f7'
+    darkColour = '#e0d2f7'
+    strokeColour = '#e0d2f7'
+
+    bodyColour2 = '#8551e0'
+    beakColour2 = '#8551e0'
+    featherColour2 = '#8551e0'
+    darkColour2 = '#8551e0'
+    strokeColour = '#8551e0'
+  }
+
+  if (pattern4) {
+
+    DrawCircle(100,45,10,220)
+
+    DrawCube(10.75,7,25)
+
+    DrawFlamingo2(56,15,1.5)
+
+    DrawFlamingo(61,18.5,1.4)
+
+    DrawFlamingo2(66,21.5,1.3)
+
+    DrawFlamingo(70,24.5,1.2)
+
+    DrawFlamingo2(75,27.5,1.1)
+
+    DrawFlamingo(80,30.5,1)
+
+    DrawFlamingo2(86,33.5,0.9)  
+  }
+
 
 }
 
+
 function DrawBird(bodyX,bodyY,scaleFactor) {
 
-  stroke(24, 62, 97); // dark blue
+  stroke(strokeColour); // dark blue
   strokeWeight(0.2);
 
-  fill(255);
+  fill(bodyColour);
   
 
   // for the white outline / body of the bird
@@ -188,7 +364,7 @@ function DrawBird(bodyX,bodyY,scaleFactor) {
 
 
 
-  fill(250, 141, 105);// orange colour
+  fill(beakColour);// orange colour
 
   // shape of the orange pattern on bird
   beginShape();
@@ -202,7 +378,7 @@ function DrawBird(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
   
-  fill(184, 175, 173);// grey colour
+  fill(featherColour);// grey colour
 
   // grey shading of the birds wings
   beginShape();
@@ -221,15 +397,11 @@ function DrawBird(bodyX,bodyY,scaleFactor) {
     vertex((bodyX + 110) * scaleFactor,(bodyY + 100) * scaleFactor); // (160,150)
  
   endShape(CLOSE);
-
-  // grey shading one the birds neck
-
-
-
+  
 
   endShape(CLOSE);
 
-  fill(20, 18, 18);// black colour
+  fill(darkColour);// black colour
 
   // black colour patterning on bottom of birds wings
   beginShape();
@@ -297,7 +469,149 @@ function DrawBird(bodyX,bodyY,scaleFactor) {
 
   }
 
+function DrawBird2(bodyX,bodyY,scaleFactor) {
 
+  stroke(strokeColour2); // dark blue
+  strokeWeight(0.2);
+
+  fill(bodyColour2);
+  
+
+  // for the white outline / body of the bird
+
+  beginShape();
+
+    vertex((bodyX + 110) * scaleFactor,(bodyY + 100) * scaleFactor); // (160,150)
+    vertex((bodyX + 45) * scaleFactor,(bodyY + 55) * scaleFactor); // (95,105)
+    vertex((bodyX + 10) * scaleFactor,(bodyY + 55) * scaleFactor); // (60.105)
+    vertex(bodyX * scaleFactor,(bodyY + 50) * scaleFactor); // (50,100)
+    vertex((bodyX - 2) * scaleFactor,(bodyY + 40) * scaleFactor); // (48,90)
+    vertex((bodyX - 2) * scaleFactor,(bodyY - 10) * scaleFactor); // (48,40)
+    vertex((bodyX - 15) * scaleFactor,(bodyY - 20) * scaleFactor); // (35,30)
+    vertex((bodyX - 32) * scaleFactor,(bodyY - 10) * scaleFactor); // (18,40)
+    vertex((bodyX - 42) * scaleFactor,(bodyY + 5) * scaleFactor); // (8,55)
+    vertex((bodyX - 25) * scaleFactor,bodyY * scaleFactor); // (25,50)
+    vertex((bodyX - 15) * scaleFactor,(bodyY + 2) * scaleFactor); // (35,52)
+    vertex((bodyX - 15) * scaleFactor,(bodyY + 50) * scaleFactor); // (35,100)
+    vertex((bodyX - 14) * scaleFactor,(bodyY + 55) * scaleFactor); // (26,105)
+    vertex((bodyX - 10) * scaleFactor,(bodyY + 60) * scaleFactor); // (40,110)
+    vertex((bodyX + 5) * scaleFactor,(bodyY + 100) * scaleFactor); // (55,150)
+    vertex((bodyX + 20) * scaleFactor,(bodyY + 98) * scaleFactor); // (70,148)
+    vertex((bodyX + 35) * scaleFactor,(bodyY + 102) * scaleFactor); // (85,152)
+    vertex((bodyX + 45) * scaleFactor,(bodyY + 105) * scaleFactor); // (95,155)
+    vertex((bodyX + 55) * scaleFactor,(bodyY + 110) * scaleFactor); // (105,160)
+    vertex((bodyX + 50) * scaleFactor,(bodyY + 95) * scaleFactor); // (100,145)
+    vertex((bodyX + 70) * scaleFactor,(bodyY + 105) * scaleFactor); // (120,155)
+    vertex((bodyX + 65) * scaleFactor,(bodyY + 95) * scaleFactor); // (115,145)
+
+  endShape(CLOSE);
+
+
+
+  fill(beakColour2);// orange colour
+
+  // shape of the orange pattern on bird
+  beginShape();
+  
+    vertex((bodyX - 25) * scaleFactor,(bodyY - 6) * scaleFactor); // (25,44)
+    vertex((bodyX - 15) * scaleFactor,(bodyY - 2) * scaleFactor); // (35,48)
+    vertex((bodyX - 9) * scaleFactor,(bodyY - 12) * scaleFactor); // (41,38)
+    vertex((bodyX - 13) * scaleFactor,(bodyY - 15) * scaleFactor); // (37,35)
+    vertex((bodyX - 28) * scaleFactor,(bodyY - 10) * scaleFactor); // (22,40)
+    vertex((bodyX - 32) * scaleFactor,(bodyY - 5) * scaleFactor); // (18,45)
+
+  endShape(CLOSE);
+  
+  fill(featherColour2);// grey colour
+
+  // grey shading of the birds wings
+  beginShape();
+
+    vertex((bodyX + 57) * scaleFactor,(bodyY + 82) * scaleFactor); // (107,132)
+    vertex((bodyX + 55) * scaleFactor,(bodyY + 90) * scaleFactor); // (105,140)
+    vertex((bodyX + 40) * scaleFactor,(bodyY + 80) * scaleFactor); // (90,130)
+    vertex((bodyX + 37) * scaleFactor,(bodyY + 90) * scaleFactor); // (87,140)
+    vertex((bodyX + 11) * scaleFactor,(bodyY + 87) * scaleFactor); // (61,137)
+    vertex(bodyX * scaleFactor,(bodyY + 70) * scaleFactor); // (50,120)
+    vertex((bodyX + 8) * scaleFactor,(bodyY + 90) * scaleFactor); // (58,140)
+    vertex((bodyX + 41) * scaleFactor,(bodyY + 95) * scaleFactor); // (91,145)
+    vertex((bodyX + 42) * scaleFactor,(bodyY + 85) * scaleFactor); // (92,135)
+    vertex((bodyX + 60) * scaleFactor,(bodyY + 95) * scaleFactor); // (110,145)
+    vertex((bodyX + 60) * scaleFactor,(bodyY + 88) * scaleFactor); // (110,138)
+    vertex((bodyX + 110) * scaleFactor,(bodyY + 100) * scaleFactor); // (160,150)
+ 
+  endShape(CLOSE);
+  
+
+  endShape(CLOSE);
+
+  fill(darkColour2);// black colour
+
+  // black colour patterning on bottom of birds wings
+  beginShape();
+
+    vertex((bodyX + 60) * scaleFactor,(bodyY + 88) * scaleFactor); // (110,138)
+    vertex((bodyX + 60) * scaleFactor,(bodyY + 95) * scaleFactor); // (110,145)
+    vertex((bodyX + 42) * scaleFactor,(bodyY + 85) * scaleFactor); // (92,135)
+    vertex((bodyX + 41) * scaleFactor,(bodyY + 95) * scaleFactor); // (91,145)
+    vertex((bodyX + 25) * scaleFactor,(bodyY + 92) * scaleFactor); // (75,142)
+    vertex((bodyX + 55) * scaleFactor,(bodyY + 110) * scaleFactor); // (105,160)
+    vertex((bodyX + 50) * scaleFactor,(bodyY + 95) * scaleFactor); // (100,145)
+    vertex((bodyX + 70) * scaleFactor,(bodyY + 105) * scaleFactor); // (120,155)
+    vertex((bodyX + 65) * scaleFactor,(bodyY + 95) * scaleFactor); // (115,145)
+    vertex((bodyX + 110) * scaleFactor,(bodyY + 100) * scaleFactor); // (160,150)
+  
+  endShape(CLOSE);
+
+  // beginning feather found on the top most of head
+  beginShape();
+
+    vertex((bodyX - 15) * scaleFactor,(bodyY - 20) * scaleFactor); // (35,30)
+    vertex((bodyX - 14) * scaleFactor,(bodyY - 35) * scaleFactor); // (36,15)
+    vertex((bodyX - 8) * scaleFactor,(bodyY - 35) * scaleFactor); // (42,15)
+    vertex((bodyX - 14) * scaleFactor,(bodyY - 19) * scaleFactor); // (36,31)
+
+  endShape(CLOSE);
+
+  // second feather
+  beginShape();
+
+    vertex((bodyX - 10) * scaleFactor,(bodyY - 16) * scaleFactor); // (40,34)
+    vertex((bodyX + 4) * scaleFactor,(bodyY - 32) * scaleFactor); // (54,18)
+    vertex((bodyX + 15) * scaleFactor,(bodyY - 30) * scaleFactor); // (65,20)
+    vertex((bodyX - 9) * scaleFactor,(bodyY - 15) * scaleFactor); //(41,35)
+
+  endShape();
+  
+  // third feather
+  beginShape();
+
+    vertex((bodyX - 2) * scaleFactor,(bodyY - 10) * scaleFactor); // (48,40)
+    vertex((bodyX + 20) * scaleFactor,(bodyY - 24) * scaleFactor); // (70,26)
+    vertex((bodyX + 28) * scaleFactor,(bodyY - 15) * scaleFactor); // (78,35)
+    vertex((bodyX - 2) * scaleFactor,(bodyY - 8) * scaleFactor); // (48,42)
+
+  endShape(CLOSE);
+
+  //fourth feather
+  beginShape();
+
+    vertex((bodyX - 2) * scaleFactor,bodyY * scaleFactor); // (48,50)
+    vertex((bodyX + 15) * scaleFactor,(bodyY - 5) * scaleFactor); // (65,45)
+    vertex((bodyX + 20) * scaleFactor,bodyY * scaleFactor); // (70,50)
+
+  endShape(CLOSE);
+
+  // fifth feather
+  beginShape();
+
+    vertex((bodyX - 2) * scaleFactor,(bodyY + 5) * scaleFactor); // (48,55)
+    vertex((bodyX + 5) * scaleFactor,(bodyY + 5) * scaleFactor); // (55,55)
+    vertex((bodyX + 8) * scaleFactor,(bodyY + 10) * scaleFactor); // (58,60)
+
+  endShape(CLOSE);
+
+  }
 
   function DrawCube (cubeX,cubeY,cubeFactor) {
 
@@ -576,18 +890,13 @@ function DrawBird(bodyX,bodyY,scaleFactor) {
   endShape(CLOSE);
 
   }
+  
 
-function DrawCircle(circleX,circleY) {
+  // circle pattern
+function DrawCircle(circleX,circleY,scaleCircle,scaleCircle) {
 
-  // pattern
   
   noStroke();
-
-  fill(bubbleCircles);
-  ellipse(circleX - 10,circleY + 65,fourCircle,fourCircle); // 40,115,40,40
-  ellipse(circleX + 100,circleY + 65,fourCircle,fourCircle); // 150,115,40,40
-  ellipse(circleX,circleY + 115,fourCircle,fourCircle); // 50,165,40,40
-  ellipse(circleX + 80,circleY + 18,fourCircle,fourCircle); // 130,65,40,40
 
   fill(outlineCircle); // dark blue
   ellipse(circleX + 45,circleY + 70,scaleCircle + 70,scaleCircle + 80); // dark circle outline (95,120,110,120)
@@ -597,6 +906,270 @@ function DrawCircle(circleX,circleY) {
 
 }
 
+  // four circles
+function DrawFour (fourX,fourY,fourCircleW,fourCircleL)  {
+
+  noStroke();
+
+  fill(bubbleCircles);
+  ellipse(fourX - 10,fourY + 65,fourCircleW,fourCircleL); // 40,115,40,40
+  ellipse(fourX + 100,fourY + 65,fourCircleW,fourCircleL); // 150,115,40,40
+  ellipse(fourX,fourY + 115,fourCircleW,fourCircleL); // 50,165,40,40
+  ellipse(fourX + 80,fourY + 18,fourCircleW,fourCircleL); // 130,65,40,40
+
+}
+
+function DrawFlamingo (flamX,flamY,flamFactor)  {
+
+noStroke();
+fill(flamBeak);
+  // beak of the flamingo
+  beginShape();
+
+    vertex((flamX + 2) * flamFactor,(flamY - 17) * flamFactor); // (52,33)
+    vertex((flamX - 5) * flamFactor,(flamY - 13) * flamFactor); // (45,37)
+    vertex((flamX - 9) * flamFactor,(flamY - 11) * flamFactor); // (41,39)
+    vertex((flamX - 12) * flamFactor,(flamY - 8) * flamFactor); // (38,42)
+    vertex((flamX - 14) * flamFactor,(flamY - 6) * flamFactor); // (36,44)
+    vertex((flamX - 17) * flamFactor,(flamY + 2) * flamFactor); // (33,52)
+    vertex((flamX - 13) * flamFactor,(flamY - 1) * flamFactor); // (37,49)
+    vertex((flamX - 10) * flamFactor,(flamY - 3) * flamFactor); // (40,47)
+    vertex((flamX + 2) * flamFactor,(flamY - 7) * flamFactor); // (52,43)
+
+  endShape(CLOSE);
 
 
+  fill(flamTip);
+  beginShape();
 
+    vertex((flamX - 9) * flamFactor,(flamY - 11) * flamFactor); // (41,39)
+    vertex((flamX - 12) * flamFactor,(flamY - 8) * flamFactor); // (38,42)
+    vertex((flamX - 14) * flamFactor,(flamY - 6) * flamFactor); // (36,44)
+    vertex((flamX - 17) * flamFactor,(flamY + 2) * flamFactor); // (33,52)
+    vertex((flamX - 13) * flamFactor,(flamY - 1) * flamFactor); // (37,49)
+    vertex((flamX - 10) * flamFactor,(flamY - 3) * flamFactor); // (40,47)
+
+  endShape(CLOSE);
+
+  fill(flamColour);
+  // body of the flamingo
+  beginShape();
+
+    vertex((flamX + 60) * flamFactor,(flamY + 77) * flamFactor); // (110,127)
+    vertex((flamX + 20) * flamFactor,(flamY + 77) * flamFactor); // (70,127)
+    vertex((flamX + 17) * flamFactor,(flamY + 75) * flamFactor); // (67,125)
+    vertex((flamX + 10) * flamFactor,(flamY + 70) * flamFactor); // (60,120)
+    vertex((flamX - 2) * flamFactor,(flamY + 50) * flamFactor); // (48,100)
+    vertex((flamX + 15) * flamFactor,(flamY - 3) * flamFactor); // (65,47)
+    vertex((flamX + 13) * flamFactor,(flamY - 5) * flamFactor); // (63,45)
+    vertex((flamX - 1) * flamFactor,(flamY - 7) * flamFactor); // (49,43)
+    vertex((flamX - 2) * flamFactor,(flamY - 12) * flamFactor); // (48,38)
+    vertex((flamX + 2) * flamFactor,(flamY - 17) * flamFactor); // going left (52,33)
+    vertex((flamX + 15) * flamFactor,(flamY - 23) * flamFactor); // top most point of flamingo (65,27)
+    vertex((flamX + 25) * flamFactor,(flamY - 21) * flamFactor); // going right (75,29)
+    vertex((flamX + 30) * flamFactor,(flamY - 10) * flamFactor); // (80,40)
+    vertex((flamX + 16) * flamFactor,(flamY + 40) * flamFactor); // (66,90)
+    vertex((flamX + 17) * flamFactor,(flamY + 50) * flamFactor); // (67,100)
+    vertex((flamX + 24) * flamFactor,(flamY + 52) * flamFactor); // (74,102)
+    vertex((flamX + 28) * flamFactor,(flamY + 50) * flamFactor); // (78,100)
+    vertex((flamX + 33) * flamFactor,(flamY + 43) * flamFactor); // (83,93)
+    vertex((flamX + 47) * flamFactor,(flamY + 34) * flamFactor); // (97,84)
+    vertex((flamX + 70) * flamFactor,(flamY + 40) * flamFactor); // (120,90)
+    vertex((flamX + 105) * flamFactor,(flamY + 70) * flamFactor); // (155,120)
+    vertex((flamX + 112) * flamFactor,(flamY + 83) * flamFactor); // (162,133)
+    vertex((flamX + 95) * flamFactor,(flamY + 75) * flamFactor); // (145,125)
+    vertex((flamX + 94) * flamFactor,(flamY + 80) * flamFactor); // (144,130)
+    vertex((flamX + 87) * flamFactor,(flamY + 77) * flamFactor); // (137,127)
+
+  endShape(CLOSE);
+
+  fill(flamOne);
+  // first part of leg of flamingo
+  beginShape();
+
+    vertex((flamX + 49) * flamFactor,(flamY + 88) * flamFactor); // (99,138)
+    vertex((flamX + 51) * flamFactor,(flamY + 88) * flamFactor); // (101,138)
+    vertex((flamX + 59) * flamFactor,(flamY + 120) * flamFactor); // (109,170)
+    vertex((flamX + 57) * flamFactor,(flamY + 120) * flamFactor); // (107,170)
+
+  endShape(CLOSE);
+
+  // second part of leg of flamingo
+  beginShape();
+
+    vertex((flamX + 57) * flamFactor,(flamY + 119) * flamFactor); // (107,169)
+    vertex((flamX + 59) * flamFactor,(flamY + 120) * flamFactor); // (109,170)
+    vertex((flamX + 31) * flamFactor,(flamY + 130) * flamFactor); // (81,180)
+    vertex((flamX + 32) * flamFactor,(flamY + 128) * flamFactor); // (82,178)
+
+  endShape(CLOSE);
+
+  // bend leg triangle foot
+  beginShape();
+
+    vertex((flamX + 31) * flamFactor,(flamY + 130) * flamFactor); // (81,180)
+    vertex((flamX + 32) * flamFactor,(flamY + 128) * flamFactor); // (82,178)
+    vertex((flamX + 34) * flamFactor,(flamY + 141) * flamFactor) // (84,191)
+    vertex((flamX + 26) * flamFactor,(flamY + 143) * flamFactor); // (76,193)
+
+  endShape(CLOSE);
+
+  fill(flamHip);
+  // triangle leg shape for flamingo
+  beginShape();
+
+    vertex((flamX + 35) * flamFactor,(flamY + 76) * flamFactor); // (85,126)
+    vertex((flamX + 50) * flamFactor,(flamY + 90) * flamFactor); // (100,140)
+    vertex((flamX + 60) * flamFactor,(flamY + 76) * flamFactor); // (110,126)
+
+  endShape(CLOSE);
+
+  fill(flamTwo);
+  // straight flamingo leg
+  beginShape();
+
+    vertex((flamX + 49) * flamFactor,(flamY + 88) * flamFactor); // (99,138)
+    vertex((flamX + 51) * flamFactor,(flamY + 88) * flamFactor); // (101,138)
+    vertex((flamX + 51) * flamFactor,(flamY + 158) * flamFactor); // (101,208)
+    vertex((flamX + 49) * flamFactor,(flamY + 158) * flamFactor); // (99,208)
+
+  endShape(CLOSE);
+
+  // foot on ground flamingo
+  beginShape();
+
+    vertex((flamX + 49) * flamFactor,(flamY + 158) * flamFactor); // (99,208)
+    vertex((flamX + 51) * flamFactor,(flamY + 158) * flamFactor); // (101,208)
+    vertex((flamX + 51) * flamFactor,(flamY + 160) * flamFactor); // (101,210)
+    vertex((flamX + 33) * flamFactor,(flamY + 160) * flamFactor); // (83,210)
+
+  endShape(CLOSE);
+
+}
+
+function DrawFlamingo2 (flamX,flamY,flamFactor)  {
+
+noStroke();
+fill(flamBeak2);
+  // beak of the flamingo
+  beginShape();
+
+    vertex((flamX + 2) * flamFactor,(flamY - 17) * flamFactor); // (52,33)
+    vertex((flamX - 5) * flamFactor,(flamY - 13) * flamFactor); // (45,37)
+    vertex((flamX - 9) * flamFactor,(flamY - 11) * flamFactor); // (41,39)
+    vertex((flamX - 12) * flamFactor,(flamY - 8) * flamFactor); // (38,42)
+    vertex((flamX - 14) * flamFactor,(flamY - 6) * flamFactor); // (36,44)
+    vertex((flamX - 17) * flamFactor,(flamY + 2) * flamFactor); // (33,52)
+    vertex((flamX - 13) * flamFactor,(flamY - 1) * flamFactor); // (37,49)
+    vertex((flamX - 10) * flamFactor,(flamY - 3) * flamFactor); // (40,47)
+    vertex((flamX + 2) * flamFactor,(flamY - 7) * flamFactor); // (52,43)
+
+  endShape(CLOSE);
+
+
+  fill(flamTip2);
+  beginShape();
+
+    vertex((flamX - 9) * flamFactor,(flamY - 11) * flamFactor); // (41,39)
+    vertex((flamX - 12) * flamFactor,(flamY - 8) * flamFactor); // (38,42)
+    vertex((flamX - 14) * flamFactor,(flamY - 6) * flamFactor); // (36,44)
+    vertex((flamX - 17) * flamFactor,(flamY + 2) * flamFactor); // (33,52)
+    vertex((flamX - 13) * flamFactor,(flamY - 1) * flamFactor); // (37,49)
+    vertex((flamX - 10) * flamFactor,(flamY - 3) * flamFactor); // (40,47)
+
+  endShape(CLOSE);
+
+  fill(flamColour2);
+  // body of the flamingo
+  beginShape();
+
+    vertex((flamX + 60) * flamFactor,(flamY + 77) * flamFactor); // (110,127)
+    vertex((flamX + 20) * flamFactor,(flamY + 77) * flamFactor); // (70,127)
+    vertex((flamX + 17) * flamFactor,(flamY + 75) * flamFactor); // (67,125)
+    vertex((flamX + 10) * flamFactor,(flamY + 70) * flamFactor); // (60,120)
+    vertex((flamX - 2) * flamFactor,(flamY + 50) * flamFactor); // (48,100)
+    vertex((flamX + 15) * flamFactor,(flamY - 3) * flamFactor); // (65,47)
+    vertex((flamX + 13) * flamFactor,(flamY - 5) * flamFactor); // (63,45)
+    vertex((flamX - 1) * flamFactor,(flamY - 7) * flamFactor); // (49,43)
+    vertex((flamX - 2) * flamFactor,(flamY - 12) * flamFactor); // (48,38)
+    vertex((flamX + 2) * flamFactor,(flamY - 17) * flamFactor); // going left (52,33)
+    vertex((flamX + 15) * flamFactor,(flamY - 23) * flamFactor); // top most point of flamingo (65,27)
+    vertex((flamX + 25) * flamFactor,(flamY - 21) * flamFactor); // going right (75,29)
+    vertex((flamX + 30) * flamFactor,(flamY - 10) * flamFactor); // (80,40)
+    vertex((flamX + 16) * flamFactor,(flamY + 40) * flamFactor); // (66,90)
+    vertex((flamX + 17) * flamFactor,(flamY + 50) * flamFactor); // (67,100)
+    vertex((flamX + 24) * flamFactor,(flamY + 52) * flamFactor); // (74,102)
+    vertex((flamX + 28) * flamFactor,(flamY + 50) * flamFactor); // (78,100)
+    vertex((flamX + 33) * flamFactor,(flamY + 43) * flamFactor); // (83,93)
+    vertex((flamX + 47) * flamFactor,(flamY + 34) * flamFactor); // (97,84)
+    vertex((flamX + 70) * flamFactor,(flamY + 40) * flamFactor); // (120,90)
+    vertex((flamX + 105) * flamFactor,(flamY + 70) * flamFactor); // (155,120)
+    vertex((flamX + 112) * flamFactor,(flamY + 83) * flamFactor); // (162,133)
+    vertex((flamX + 95) * flamFactor,(flamY + 75) * flamFactor); // (145,125)
+    vertex((flamX + 94) * flamFactor,(flamY + 80) * flamFactor); // (144,130)
+    vertex((flamX + 87) * flamFactor,(flamY + 77) * flamFactor); // (137,127)
+
+  endShape(CLOSE);
+
+  fill(flamOne2);
+  // first part of leg of flamingo
+  beginShape();
+
+    vertex((flamX + 49) * flamFactor,(flamY + 88) * flamFactor); // (99,138)
+    vertex((flamX + 51) * flamFactor,(flamY + 88) * flamFactor); // (101,138)
+    vertex((flamX + 59) * flamFactor,(flamY + 120) * flamFactor); // (109,170)
+    vertex((flamX + 57) * flamFactor,(flamY + 120) * flamFactor); // (107,170)
+
+  endShape(CLOSE);
+
+  // second part of leg of flamingo
+  beginShape();
+
+    vertex((flamX + 57) * flamFactor,(flamY + 119) * flamFactor); // (107,169)
+    vertex((flamX + 59) * flamFactor,(flamY + 120) * flamFactor); // (109,170)
+    vertex((flamX + 31) * flamFactor,(flamY + 130) * flamFactor); // (81,180)
+    vertex((flamX + 32) * flamFactor,(flamY + 128) * flamFactor); // (82,178)
+
+  endShape(CLOSE);
+
+  // bend leg triangle foot
+  beginShape();
+
+    vertex((flamX + 31) * flamFactor,(flamY + 130) * flamFactor); // (81,180)
+    vertex((flamX + 32) * flamFactor,(flamY + 128) * flamFactor); // (82,178)
+    vertex((flamX + 34) * flamFactor,(flamY + 141) * flamFactor) // (84,191)
+    vertex((flamX + 26) * flamFactor,(flamY + 143) * flamFactor); // (76,193)
+
+  endShape(CLOSE);
+
+  fill(flamHip2);
+  // triangle leg shape for flamingo
+  beginShape();
+
+    vertex((flamX + 35) * flamFactor,(flamY + 76) * flamFactor); // (85,126)
+    vertex((flamX + 50) * flamFactor,(flamY + 90) * flamFactor); // (100,140)
+    vertex((flamX + 60) * flamFactor,(flamY + 76) * flamFactor); // (110,126)
+
+  endShape(CLOSE);
+
+  fill(flamTwo2);
+  // straight flamingo leg
+  beginShape();
+
+    vertex((flamX + 49) * flamFactor,(flamY + 88) * flamFactor); // (99,138)
+    vertex((flamX + 51) * flamFactor,(flamY + 88) * flamFactor); // (101,138)
+    vertex((flamX + 51) * flamFactor,(flamY + 158) * flamFactor); // (101,208)
+    vertex((flamX + 49) * flamFactor,(flamY + 158) * flamFactor); // (99,208)
+
+  endShape(CLOSE);
+
+  // foot on ground flamingo
+  beginShape();
+
+    vertex((flamX + 49) * flamFactor,(flamY + 158) * flamFactor); // (99,208)
+    vertex((flamX + 51) * flamFactor,(flamY + 158) * flamFactor); // (101,208)
+    vertex((flamX + 51) * flamFactor,(flamY + 160) * flamFactor); // (101,210)
+    vertex((flamX + 33) * flamFactor,(flamY + 160) * flamFactor); // (83,210)
+
+  endShape(CLOSE);
+}
