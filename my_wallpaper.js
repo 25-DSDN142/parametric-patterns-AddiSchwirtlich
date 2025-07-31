@@ -5,7 +5,7 @@ let scaleFactor = 0.8; // to increase/decrease size of bird
 
 let cubeX = 11; // move cube left and right
 let cubeY = 8; // move cube up and down
-let cubeFactor = 25; // to increase/decrease cube size
+let cubeFactor = 22; // to increase/decrease cube size
 
 
 let baseColour = '#b3e4e6'; // base colour of cube
@@ -27,9 +27,19 @@ let fourCircleL = 55; // changes length of four circles
 
 let pattern2 = false; // if true creates a pattern (IF STATEMENT FOUND ON LINE 81)
 
-let pattern3 = false;// if true creates pattern 2
+let pattern3 = false; // if true creates pattern 2
 
-let pattern4 = false;
+let pattern4 = false; // if true creates pattern 4
+
+let pattern5 = false; // if true creates pattern 5
+
+let pattern6 = false; // if true creates pattern 6
+
+let pattern7 = false; // if true creates pattern 7
+
+let pattern8 = false; // if true creates pattern 8
+
+let pattern9 = true; // if true creates pattern 9
 
 let blueColour = true; // if false changes to blue (IF STATEMENT FOUND ON LINE 44)
 
@@ -65,6 +75,8 @@ let flamOne2 = '#ff0561'
 let flamTwo2 = '#ff0561'
 let flamHip2 = '#ff0561'
 
+
+// colours for pattern cubefactor > 25
 if (cubeFactor > 24){
   backColour = '#131361'
   baseColour = '#131361'
@@ -75,7 +87,7 @@ if (cubeFactor > 24){
   bubbleCircles = '#7f7feb'
 
 }
-
+// pink colour palette
 if (blueColour == false) { // changes colour of cubes and circles to pink
   baseColour = '#e6a45a'
   shadeColour = '#d6c24d'
@@ -86,7 +98,7 @@ if (blueColour == false) { // changes colour of cubes and circles to pink
   backColour = '#ff3d24'
   
 }
-
+// colour palette for pattern 4
 if (pattern4) {
 
   backColour = '#ffd4f2'
@@ -104,9 +116,120 @@ if (pattern4) {
   flamHip = '#ffd4f8'
 
 }
+// colour palette for pattern 5
+if (pattern5) {
 
+  flamTip2 = '#f2f23f'
+  flamColour2 = '#f2f23f'
+  flamBeak2 = '#f2f23f'
+  flamOne2 = '#f2f23f'
+  flamTwo2 = '#f2f23f'
+  flamHip2 = '#f2f23f'
 
+  flamColour = '#26c5ff'
+  flamTip = '#26c5ff'
+  flamBeak = '#26c5ff'
+  flamOne = '#26c5ff'
+  flamTwo = '#26c5ff'
+  flamHip = '#26c5ff'
 
+  bodyColour2 = '#f947ff'
+  beakColour2 = '#f947ff'
+  featherColour2 = '#f947ff'
+  darkColour2 = '#f947ff'
+  strokeColour2 = '#f947ff'
+
+  bodyColour = '#30ff64'
+  beakColour = '#30ff64'
+  featherColour = '#30ff64'
+  darkColour = '#30ff64'
+  strokeColour = '#30ff64'
+
+  
+  backColour = '#000000'
+
+}
+// colour palette for pattern 6
+if (pattern6) {
+
+  bodyColour2 = '#4f1502'
+  beakColour2 = '#4f1502'
+  featherColour2 = '#4f1502'
+  darkColour2 = '#4f1502'
+  strokeColour2 = '#4f1502'
+
+  bodyColour = '#ffb95e'
+  beakColour = '#ffb95e'
+  featherColour = '#ffb95e'
+  darkColour = '#ffb95e'
+  strokeColour = '#ffb95e'
+
+  baseColour = '#ff8800' 
+  shadeColour = '#b34805'
+  highlightColour = '#ff9c5e'
+
+  backColour = '#ff8800'
+
+}
+// colour palette for pattern 7
+if (pattern7) {
+
+  backColour = '#61ffb3'
+  outlineCircle = '#004f42'
+  insideCircle = '#90fcc8'
+  baseColour = '#61ffb3'
+  shadeColour = '#08966e'
+  highlightColour = '#61ffb3'
+
+  flamColour = '#e3ffe9'
+  flamTip = '#e3ffe9'
+  flamBeak = '#e3ffe9'
+  flamOne = '#e3ffe9'
+  flamTwo = '#e3ffe9'
+  flamHip = '#e3ffe9'
+
+  flamTip2 = '#02543e'
+  flamColour2 = '#02543e'
+  flamBeak2 = '#02543e'
+  flamOne2 = '#02543e'
+  flamTwo2 = '#02543e'
+  flamHip2 = '#02543e'
+
+}
+// colour palette for pattern 8
+if (pattern8) {
+
+  backColour = '#e66374'
+  outlineCircle = '#ff6177'
+  insideCircle = '#ffa1ad'
+
+  flamColour = '#fc445c'
+  flamTip = '#212118'
+  flamBeak = '#ffffff'
+  flamOne = '#bdb182'
+  flamTwo = '#f5eed3'
+  flamHip = '#d62b42'
+
+}
+
+if (pattern9) {
+  backColour = '#e66374'
+  outlineCircle = '#ff6177'
+  insideCircle = '#ffa1ad'
+
+  flamColour = '#fc445c'
+  flamTip = '#212118'
+  flamBeak = '#ffffff'
+  flamOne = '#bdb182'
+  flamTwo = '#f5eed3'
+  flamHip = '#d62b42'
+
+  bodyColour = '#ffebed'
+  beakColour = '#cc767f'
+  featherColour = '#c7a9ac'
+  darkColour = '#42070e'
+  strokeColour = '#183e61'
+}
 
 
 // if statements found on line 90 and 192
@@ -321,9 +444,192 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     DrawFlamingo2(86,33.5,0.9)  
   }
 
+  if (pattern5) {
+
+    DrawBird(-10,10,1)
+
+    DrawBird2(190,40,0.8)
+
+    DrawFlamingo(90,-100,0.5)
+
+    DrawFlamingo2(350,-150,0.5)
+
+  }
+
+  if (pattern6) {
+
+    DrawCube(10,10,80);
+
+    angleMode(DEGREES)
+
+    rotate(45)
+
+    DrawBird2(15,0,1)  
+
+    DrawBird(0,0,1.1)
+
+    DrawBird2(-5,8,1)  
+  }
+
+  if (pattern7) {
+
+    DrawCircle(100,45,10,270)
+
+    DrawCircle(100,70,10,270)
+
+    DrawCircle(100,85,10,270)
+
+    DrawCube(5,7,40)
+
+    DrawFlamingo2(-225,-165,0.8)
+
+    DrawFlamingo(-230,-160,0.8)
+
+    DrawFlamingo2(-10,-30,0.6)
+
+  
+  }
+
+  if (pattern8) {
+
+    DrawCircle(0,0,10,60);
+
+    DrawCircle(-150,50,10,1);
+
+    DrawCircle(-150,-70,10,20);
+
+    DrawFour(0,0,20,20);
+
+    DrawFour(-150,50,5,5);
+
+    DrawFour(-150,-70,5,5,);
+
+    DrawFlamingo(0,0,0.9)
+
+    DrawFlamingo(-250,-50,0.5)
+
+    DrawFlamingo(-390,320,0.3)
+
+  }
+
+  if (pattern9) {
+
+    DrawCube(5,5,4); // cube found on the top left corner ( rest of cube go from left )
+
+    DrawCube(18.5,5.5,3); //small
+
+    DrawCube(25,5,4);
+
+    DrawCube(45,5.5,3); //small
+
+    DrawCube(45,5,4);
+
+    DrawCube(72,5.5,3); //small
+
+    DrawCube(0,13,4);
+
+    DrawCube(11.5,16.5,3); //small
+
+    DrawCube(20,13,4);
+
+    DrawCube(38.5,16.5,3); //small
+
+    DrawCube(40,13,4);
+
+    DrawCube(65,16.5,3); //small
+
+    DrawCube(60,13,4);
+
+    DrawCube(5,27,3); //small
+
+    DrawCube(15,21,4);
+
+    DrawCube(32,27,3); //small
+
+    DrawCube(35,21,4);
+
+    DrawCube(58.5,27,3); //small
+
+    DrawCube(55,21,4);
+
+    DrawCube(-1.5,37.5,3); //small
+
+    DrawCube(10,29,4);
+
+    DrawCube(25,37.5,3); //small
+
+    DrawCube(30,29,4);
+
+    DrawCube(51.5,37.5,3); //small
+
+    DrawCube(50,29,4);
+
+    DrawCube(78.5,37.5,3); //small
+
+    DrawCube(5,37,4);
+
+    DrawCube(18.5,48.5,3); //small
+
+    DrawCube(25,37,4);
+
+    DrawCube(45,48.5,3); //small
+
+    DrawCube(45,37,4);
+
+    DrawCube(72,48.5,3); //small
+
+    DrawCube(0,45,4);
+
+    DrawCube(11.5,59,3); //small
+
+    DrawCube(20,45,4);
+
+    DrawCube(38.5,59,3); //small
+
+    DrawCube(40,45,4);
+
+    DrawCube(65,59,3); //small
+  
+    DrawCube(60,45,4);
+
+    DrawCube(5,69.5,3); //small
+
+    DrawCube(15,53,4);
+
+    DrawCube(31.5,69.5,3); //small
+
+    DrawCube(35,53,4);
+
+    DrawCube(58.5,69.5,3); //small
+
+    DrawCube(55,53,4);
+
+    DrawFour(5,5,120,20);
+
+    DrawFour(5,5,20,140);
+      
+    DrawCircle(5,5,40,40);
+
+    DrawCircle(-150,50,10,1);
+
+    DrawCircle(-150,-70,10,20);
+
+    DrawFour(-150,50,5,5);
+
+    DrawFour(-150,-70,5,5,);
+
+    DrawBird(20,20,0.9)
+
+    DrawFlamingo(-250,-50,0.5)
+
+    DrawFlamingo(-390,320,0.3)
+
+
+  }
+
 
 }
-
+  
 
 function DrawBird(bodyX,bodyY,scaleFactor) {
 
