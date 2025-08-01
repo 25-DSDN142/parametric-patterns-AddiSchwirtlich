@@ -10,45 +10,726 @@ Your final settings.txt will look something like this when you are finished:
 Wallpaper 1:
 
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+let bodyX = 140; // move bird left and right
+let bodyY = 115; //  move bird up and down
+let scaleFactor = 0.8; // to increase/decrease size of bird
 
-function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
+let cubeX = 11; // move cube left and right
+let cubeY = 8; // move cube up and down
+let cubeFactor = 22; // to increase/decrease cube size
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
-}
+
+let baseColour = '#b3e4e6'; // base colour of cube
+let shadeColour = '#4dacb0'; // darker colour of cube
+let highlightColour = '#dff4f5'; // lightest colour of cube
+
+let insideCircle = '#c2ffff' // inside circle
+let outlineCircle = '#07525e' // outline darkest part of circle
+let bubbleCircles = '#1a8b9c' //  the four circle or bubbles
+
+let circleX = 100; // moves circle pattern left and right
+let circleY = 80; //  moves circle pattern up and down
+let scaleCircle = 20; // scales up or down the largest circle
+
+let fourX = 50; //  mvoes four circles left and right
+let fourY = 50; // moves four circles up and down
+let fourCircleW = 55; // changes width of four circles
+let fourCircleL = 55; // changes length of four circles
+
+let pattern2 = true; // if true creates a pattern
+
+let pattern3 = false; // if true creates pattern 2
+
+let pattern4 = false; // if true creates pattern 4
+
+let pattern5 = false; // if true creates pattern 5
+
+let pattern6 = false; // if true creates pattern 6
+
+let pattern7 = false; // if true creates pattern 7
+
+let pattern8 = false; // if true creates pattern 8
+
+let pattern9 = false; // if true creates pattern 9
+
+let blueColour = true; // if false changes to blue
+
+let bodyColour = '#ffffff' // the body colour of bird
+let beakColour = '#fa8d69' // orange colour on face/beak of bird
+let featherColour = '#b8afad' // the grey colour on bird
+let darkColour = '#141212' // dark colour on bird
+let strokeColour = '#183e61' // changes stroke colour of bird
+
+let bodyColour2 = '#ffffff' // the body colour of bird2
+let beakColour2 = '#fa8d69' // orange colour on face/beak of bird2
+let featherColour2 = '#b8afad' // the grey colour on bird2
+let darkColour2 = '#141212' // dark colour on bird2
+let strokeColour2 = '#183e61' // changes stroke colour of bird2
+
+let backColour = '#48b2c2' // changes background colour
+
+let flamX = 50 // moves flamingo left and right
+let flamY = 50 //  moves flamingo up and down
+let flamFactor = 1 // scales flamingo up and down
+
+let flamColour = '#f598e4'
+let flamTip = '#212118'
+let flamBeak = '#ffffff'
+let flamOne = '#bdb182'
+let flamTwo = '#f5eed3'
+let flamHip = '#e07ece'
+
+let flamColour2 = '#ff0561'
+let flamTip2 = '#ff0561'
+let flamBeak2 = '#ff0561'
+let flamOne2 = '#ff0561'
+let flamTwo2 = '#ff0561'
+let flamHip2 = '#ff0561'
 
 /////////////////////////////////
 
 Wallpaper 2:
 
 //your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+let bodyX = 140; // move bird left and right
+let bodyY = 115; //  move bird up and down
+let scaleFactor = 0.8; // to increase/decrease size of bird
 
-function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
+let cubeX = 11; // move cube left and right
+let cubeY = 8; // move cube up and down
+let cubeFactor = 25; // to increase/decrease cube size
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
-}
+
+let baseColour = '#b3e4e6'; // base colour of cube
+let shadeColour = '#4dacb0'; // darker colour of cube
+let highlightColour = '#dff4f5'; // lightest colour of cube
+
+let insideCircle = '#c2ffff' // inside circle
+let outlineCircle = '#07525e' // outline darkest part of circle
+let bubbleCircles = '#1a8b9c' //  the four circle or bubbles
+
+let circleX = 100; // moves circle pattern left and right
+let circleY = 80; //  moves circle pattern up and down
+let scaleCircle = 20; // scales up or down the largest circle
+
+let fourX = 50; //  mvoes four circles left and right
+let fourY = 50; // moves four circles up and down
+let fourCircleW = 55; // changes width of four circles
+let fourCircleL = 55; // changes length of four circles
+
+let pattern2 = false; // if true creates a pattern
+
+let pattern3 = false; // if true creates pattern 2
+
+let pattern4 = false; // if true creates pattern 4
+
+let pattern5 = false; // if true creates pattern 5
+
+let pattern6 = false; // if true creates pattern 6
+
+let pattern7 = false; // if true creates pattern 7
+
+let pattern8 = false; // if true creates pattern 8
+
+let pattern9 = false; // if true creates pattern 9
+
+let blueColour = true; // if false changes to blue
+
+let bodyColour = '#ffffff' // the body colour of bird
+let beakColour = '#fa8d69' // orange colour on face/beak of bird
+let featherColour = '#b8afad' // the grey colour on bird
+let darkColour = '#141212' // dark colour on bird
+let strokeColour = '#183e61' // changes stroke colour of bird
+
+let bodyColour2 = '#ffffff' // the body colour of bird2
+let beakColour2 = '#fa8d69' // orange colour on face/beak of bird2
+let featherColour2 = '#b8afad' // the grey colour on bird2
+let darkColour2 = '#141212' // dark colour on bird2
+let strokeColour2 = '#183e61' // changes stroke colour of bird2
+
+let backColour = '#48b2c2' // changes background colour
+
+let flamX = 50 // moves flamingo left and right
+let flamY = 50 //  moves flamingo up and down
+let flamFactor = 1 // scales flamingo up and down
+
+let flamColour = '#f598e4'
+let flamTip = '#212118'
+let flamBeak = '#ffffff'
+let flamOne = '#bdb182'
+let flamTwo = '#f5eed3'
+let flamHip = '#e07ece'
+
+let flamColour2 = '#ff0561'
+let flamTip2 = '#ff0561'
+let flamBeak2 = '#ff0561'
+let flamOne2 = '#ff0561'
+let flamTwo2 = '#ff0561'
+let flamHip2 = '#ff0561'
+
+/////////////////////////////////
+
+Wallpaper 3:
+
+//your parameter variables go here!
+let bodyX = 140; // move bird left and right
+let bodyY = 115; //  move bird up and down
+let scaleFactor = 0.8; // to increase/decrease size of bird
+
+let cubeX = 11; // move cube left and right
+let cubeY = 8; // move cube up and down
+let cubeFactor = 22; // to increase/decrease cube size
+
+
+let baseColour = '#b3e4e6'; // base colour of cube
+let shadeColour = '#4dacb0'; // darker colour of cube
+let highlightColour = '#dff4f5'; // lightest colour of cube
+
+let insideCircle = '#c2ffff' // inside circle
+let outlineCircle = '#07525e' // outline darkest part of circle
+let bubbleCircles = '#1a8b9c' //  the four circle or bubbles
+
+let circleX = 100; // moves circle pattern left and right
+let circleY = 80; //  moves circle pattern up and down
+let scaleCircle = 20; // scales up or down the largest circle
+
+let fourX = 50; //  mvoes four circles left and right
+let fourY = 50; // moves four circles up and down
+let fourCircleW = 55; // changes width of four circles
+let fourCircleL = 55; // changes length of four circles
+
+let pattern2 = false; // if true creates a pattern
+
+let pattern3 = true; // if true creates pattern 2
+
+let pattern4 = false; // if true creates pattern 4
+
+let pattern5 = false; // if true creates pattern 5
+
+let pattern6 = false; // if true creates pattern 6
+
+let pattern7 = false; // if true creates pattern 7
+
+let pattern8 = false; // if true creates pattern 8
+
+let pattern9 = false; // if true creates pattern 9
+
+let blueColour = false; // if false changes to blue
+
+let bodyColour = '#ffffff' // the body colour of bird
+let beakColour = '#fa8d69' // orange colour on face/beak of bird
+let featherColour = '#b8afad' // the grey colour on bird
+let darkColour = '#141212' // dark colour on bird
+let strokeColour = '#183e61' // changes stroke colour of bird
+
+let bodyColour2 = '#ffffff' // the body colour of bird2
+let beakColour2 = '#fa8d69' // orange colour on face/beak of bird2
+let featherColour2 = '#b8afad' // the grey colour on bird2
+let darkColour2 = '#141212' // dark colour on bird2
+let strokeColour2 = '#183e61' // changes stroke colour of bird2
+
+let backColour = '#48b2c2' // changes background colour
+
+let flamX = 50 // moves flamingo left and right
+let flamY = 50 //  moves flamingo up and down
+let flamFactor = 1 // scales flamingo up and down
+
+let flamColour = '#f598e4'
+let flamTip = '#212118'
+let flamBeak = '#ffffff'
+let flamOne = '#bdb182'
+let flamTwo = '#f5eed3'
+let flamHip = '#e07ece'
+
+let flamColour2 = '#ff0561'
+let flamTip2 = '#ff0561'
+let flamBeak2 = '#ff0561'
+let flamOne2 = '#ff0561'
+let flamTwo2 = '#ff0561'
+let flamHip2 = '#ff0561'
+
+/////////////////////////////////
+
+Wallpaper 4:
+
+//your parameter variables go here!
+let bodyX = 140; // move bird left and right
+let bodyY = 115; //  move bird up and down
+let scaleFactor = 0.8; // to increase/decrease size of bird
+
+let cubeX = 11; // move cube left and right
+let cubeY = 8; // move cube up and down
+let cubeFactor = 22; // to increase/decrease cube size
+
+
+let baseColour = '#b3e4e6'; // base colour of cube
+let shadeColour = '#4dacb0'; // darker colour of cube
+let highlightColour = '#dff4f5'; // lightest colour of cube
+
+let insideCircle = '#c2ffff' // inside circle
+let outlineCircle = '#07525e' // outline darkest part of circle
+let bubbleCircles = '#1a8b9c' //  the four circle or bubbles
+
+let circleX = 100; // moves circle pattern left and right
+let circleY = 80; //  moves circle pattern up and down
+let scaleCircle = 20; // scales up or down the largest circle
+
+let fourX = 50; //  mvoes four circles left and right
+let fourY = 50; // moves four circles up and down
+let fourCircleW = 55; // changes width of four circles
+let fourCircleL = 55; // changes length of four circles
+
+let pattern2 = false; // if true creates a pattern
+
+let pattern3 = false; // if true creates pattern 2
+
+let pattern4 = true; // if true creates pattern 4
+
+let pattern5 = false; // if true creates pattern 5
+
+let pattern6 = false; // if true creates pattern 6
+
+let pattern7 = false; // if true creates pattern 7
+
+let pattern8 = false; // if true creates pattern 8
+
+let pattern9 = false; // if true creates pattern 9
+
+let blueColour = false; // if false changes to blue
+
+let bodyColour = '#ffffff' // the body colour of bird
+let beakColour = '#fa8d69' // orange colour on face/beak of bird
+let featherColour = '#b8afad' // the grey colour on bird
+let darkColour = '#141212' // dark colour on bird
+let strokeColour = '#183e61' // changes stroke colour of bird
+
+let bodyColour2 = '#ffffff' // the body colour of bird2
+let beakColour2 = '#fa8d69' // orange colour on face/beak of bird2
+let featherColour2 = '#b8afad' // the grey colour on bird2
+let darkColour2 = '#141212' // dark colour on bird2
+let strokeColour2 = '#183e61' // changes stroke colour of bird2
+
+let backColour = '#48b2c2' // changes background colour
+
+let flamX = 50 // moves flamingo left and right
+let flamY = 50 //  moves flamingo up and down
+let flamFactor = 1 // scales flamingo up and down
+
+let flamColour = '#f598e4'
+let flamTip = '#212118'
+let flamBeak = '#ffffff'
+let flamOne = '#bdb182'
+let flamTwo = '#f5eed3'
+let flamHip = '#e07ece'
+
+let flamColour2 = '#ff0561'
+let flamTip2 = '#ff0561'
+let flamBeak2 = '#ff0561'
+let flamOne2 = '#ff0561'
+let flamTwo2 = '#ff0561'
+let flamHip2 = '#ff0561'
+
+/////////////////////////////////
+
+Wallpaper 5:
+
+//your parameter variables go here!
+let bodyX = 140; // move bird left and right
+let bodyY = 115; //  move bird up and down
+let scaleFactor = 0.8; // to increase/decrease size of bird
+
+let cubeX = 11; // move cube left and right
+let cubeY = 8; // move cube up and down
+let cubeFactor = 22; // to increase/decrease cube size
+
+
+let baseColour = '#b3e4e6'; // base colour of cube
+let shadeColour = '#4dacb0'; // darker colour of cube
+let highlightColour = '#dff4f5'; // lightest colour of cube
+
+let insideCircle = '#c2ffff' // inside circle
+let outlineCircle = '#07525e' // outline darkest part of circle
+let bubbleCircles = '#1a8b9c' //  the four circle or bubbles
+
+let circleX = 100; // moves circle pattern left and right
+let circleY = 80; //  moves circle pattern up and down
+let scaleCircle = 20; // scales up or down the largest circle
+
+let fourX = 50; //  mvoes four circles left and right
+let fourY = 50; // moves four circles up and down
+let fourCircleW = 55; // changes width of four circles
+let fourCircleL = 55; // changes length of four circles
+
+let pattern2 = false; // if true creates a pattern
+
+let pattern3 = false; // if true creates pattern 2
+
+let pattern4 = false; // if true creates pattern 4
+
+let pattern5 = true; // if true creates pattern 5
+
+let pattern6 = false; // if true creates pattern 6
+
+let pattern7 = false; // if true creates pattern 7
+
+let pattern8 = false; // if true creates pattern 8
+
+let pattern9 = false; // if true creates pattern 9
+
+let blueColour = false; // if false changes to blue
+
+let bodyColour = '#ffffff' // the body colour of bird
+let beakColour = '#fa8d69' // orange colour on face/beak of bird
+let featherColour = '#b8afad' // the grey colour on bird
+let darkColour = '#141212' // dark colour on bird
+let strokeColour = '#183e61' // changes stroke colour of bird
+
+let bodyColour2 = '#ffffff' // the body colour of bird2
+let beakColour2 = '#fa8d69' // orange colour on face/beak of bird2
+let featherColour2 = '#b8afad' // the grey colour on bird2
+let darkColour2 = '#141212' // dark colour on bird2
+let strokeColour2 = '#183e61' // changes stroke colour of bird2
+
+let backColour = '#48b2c2' // changes background colour
+
+let flamX = 50 // moves flamingo left and right
+let flamY = 50 //  moves flamingo up and down
+let flamFactor = 1 // scales flamingo up and down
+
+let flamColour = '#f598e4'
+let flamTip = '#212118'
+let flamBeak = '#ffffff'
+let flamOne = '#bdb182'
+let flamTwo = '#f5eed3'
+let flamHip = '#e07ece'
+
+let flamColour2 = '#ff0561'
+let flamTip2 = '#ff0561'
+let flamBeak2 = '#ff0561'
+let flamOne2 = '#ff0561'
+let flamTwo2 = '#ff0561'
+let flamHip2 = '#ff0561'
+
+/////////////////////////////////
+
+Wallpaper 6:
+
+//your parameter variables go here!
+let bodyX = 140; // move bird left and right
+let bodyY = 115; //  move bird up and down
+let scaleFactor = 0.8; // to increase/decrease size of bird
+
+let cubeX = 11; // move cube left and right
+let cubeY = 8; // move cube up and down
+let cubeFactor = 22; // to increase/decrease cube size
+
+
+let baseColour = '#b3e4e6'; // base colour of cube
+let shadeColour = '#4dacb0'; // darker colour of cube
+let highlightColour = '#dff4f5'; // lightest colour of cube
+
+let insideCircle = '#c2ffff' // inside circle
+let outlineCircle = '#07525e' // outline darkest part of circle
+let bubbleCircles = '#1a8b9c' //  the four circle or bubbles
+
+let circleX = 100; // moves circle pattern left and right
+let circleY = 80; //  moves circle pattern up and down
+let scaleCircle = 20; // scales up or down the largest circle
+
+let fourX = 50; //  mvoes four circles left and right
+let fourY = 50; // moves four circles up and down
+let fourCircleW = 55; // changes width of four circles
+let fourCircleL = 55; // changes length of four circles
+
+let pattern2 = false; // if true creates a pattern
+
+let pattern3 = false; // if true creates pattern 2
+
+let pattern4 = false; // if true creates pattern 4
+
+let pattern5 = false; // if true creates pattern 5
+
+let pattern6 = true; // if true creates pattern 6
+
+let pattern7 = false; // if true creates pattern 7
+
+let pattern8 = false; // if true creates pattern 8
+
+let pattern9 = false; // if true creates pattern 9
+
+let blueColour = false; // if false changes to blue
+
+let bodyColour = '#ffffff' // the body colour of bird
+let beakColour = '#fa8d69' // orange colour on face/beak of bird
+let featherColour = '#b8afad' // the grey colour on bird
+let darkColour = '#141212' // dark colour on bird
+let strokeColour = '#183e61' // changes stroke colour of bird
+
+let bodyColour2 = '#ffffff' // the body colour of bird2
+let beakColour2 = '#fa8d69' // orange colour on face/beak of bird2
+let featherColour2 = '#b8afad' // the grey colour on bird2
+let darkColour2 = '#141212' // dark colour on bird2
+let strokeColour2 = '#183e61' // changes stroke colour of bird2
+
+let backColour = '#48b2c2' // changes background colour
+
+let flamX = 50 // moves flamingo left and right
+let flamY = 50 //  moves flamingo up and down
+let flamFactor = 1 // scales flamingo up and down
+
+let flamColour = '#f598e4'
+let flamTip = '#212118'
+let flamBeak = '#ffffff'
+let flamOne = '#bdb182'
+let flamTwo = '#f5eed3'
+let flamHip = '#e07ece'
+
+let flamColour2 = '#ff0561'
+let flamTip2 = '#ff0561'
+let flamBeak2 = '#ff0561'
+let flamOne2 = '#ff0561'
+let flamTwo2 = '#ff0561'
+let flamHip2 = '#ff0561'
+
+/////////////////////////////////
+
+Wallpaper 7:
+
+//your parameter variables go here!
+let bodyX = 140; // move bird left and right
+let bodyY = 115; //  move bird up and down
+let scaleFactor = 0.8; // to increase/decrease size of bird
+
+let cubeX = 11; // move cube left and right
+let cubeY = 8; // move cube up and down
+let cubeFactor = 22; // to increase/decrease cube size
+
+
+let baseColour = '#b3e4e6'; // base colour of cube
+let shadeColour = '#4dacb0'; // darker colour of cube
+let highlightColour = '#dff4f5'; // lightest colour of cube
+
+let insideCircle = '#c2ffff' // inside circle
+let outlineCircle = '#07525e' // outline darkest part of circle
+let bubbleCircles = '#1a8b9c' //  the four circle or bubbles
+
+let circleX = 100; // moves circle pattern left and right
+let circleY = 80; //  moves circle pattern up and down
+let scaleCircle = 20; // scales up or down the largest circle
+
+let fourX = 50; //  mvoes four circles left and right
+let fourY = 50; // moves four circles up and down
+let fourCircleW = 55; // changes width of four circles
+let fourCircleL = 55; // changes length of four circles
+
+let pattern2 = false; // if true creates a pattern
+
+let pattern3 = false; // if true creates pattern 2
+
+let pattern4 = false; // if true creates pattern 4
+
+let pattern5 = false; // if true creates pattern 5
+
+let pattern6 = false; // if true creates pattern 6
+
+let pattern7 = true; // if true creates pattern 7
+
+let pattern8 = false; // if true creates pattern 8
+
+let pattern9 = false; // if true creates pattern 9
+
+let blueColour = false; // if false changes to blue
+
+let bodyColour = '#ffffff' // the body colour of bird
+let beakColour = '#fa8d69' // orange colour on face/beak of bird
+let featherColour = '#b8afad' // the grey colour on bird
+let darkColour = '#141212' // dark colour on bird
+let strokeColour = '#183e61' // changes stroke colour of bird
+
+let bodyColour2 = '#ffffff' // the body colour of bird2
+let beakColour2 = '#fa8d69' // orange colour on face/beak of bird2
+let featherColour2 = '#b8afad' // the grey colour on bird2
+let darkColour2 = '#141212' // dark colour on bird2
+let strokeColour2 = '#183e61' // changes stroke colour of bird2
+
+let backColour = '#48b2c2' // changes background colour
+
+let flamX = 50 // moves flamingo left and right
+let flamY = 50 //  moves flamingo up and down
+let flamFactor = 1 // scales flamingo up and down
+
+let flamColour = '#f598e4'
+let flamTip = '#212118'
+let flamBeak = '#ffffff'
+let flamOne = '#bdb182'
+let flamTwo = '#f5eed3'
+let flamHip = '#e07ece'
+
+let flamColour2 = '#ff0561'
+let flamTip2 = '#ff0561'
+let flamBeak2 = '#ff0561'
+let flamOne2 = '#ff0561'
+let flamTwo2 = '#ff0561'
+let flamHip2 = '#ff0561'
+
+/////////////////////////////////
+
+Wallpaper 8:
+
+//your parameter variables go here!
+let bodyX = 140; // move bird left and right
+let bodyY = 115; //  move bird up and down
+let scaleFactor = 0.8; // to increase/decrease size of bird
+
+let cubeX = 11; // move cube left and right
+let cubeY = 8; // move cube up and down
+let cubeFactor = 22; // to increase/decrease cube size
+
+
+let baseColour = '#b3e4e6'; // base colour of cube
+let shadeColour = '#4dacb0'; // darker colour of cube
+let highlightColour = '#dff4f5'; // lightest colour of cube
+
+let insideCircle = '#c2ffff' // inside circle
+let outlineCircle = '#07525e' // outline darkest part of circle
+let bubbleCircles = '#1a8b9c' //  the four circle or bubbles
+
+let circleX = 100; // moves circle pattern left and right
+let circleY = 80; //  moves circle pattern up and down
+let scaleCircle = 20; // scales up or down the largest circle
+
+let fourX = 50; //  mvoes four circles left and right
+let fourY = 50; // moves four circles up and down
+let fourCircleW = 55; // changes width of four circles
+let fourCircleL = 55; // changes length of four circles
+
+let pattern2 = false; // if true creates a pattern
+
+let pattern3 = false; // if true creates pattern 2
+
+let pattern4 = false; // if true creates pattern 4
+
+let pattern5 = false; // if true creates pattern 5
+
+let pattern6 = false; // if true creates pattern 6
+
+let pattern7 = false; // if true creates pattern 7
+
+let pattern8 = true; // if true creates pattern 8
+
+let pattern9 = false; // if true creates pattern 9
+
+let blueColour = false; // if false changes to blue
+
+let bodyColour = '#ffffff' // the body colour of bird
+let beakColour = '#fa8d69' // orange colour on face/beak of bird
+let featherColour = '#b8afad' // the grey colour on bird
+let darkColour = '#141212' // dark colour on bird
+let strokeColour = '#183e61' // changes stroke colour of bird
+
+let bodyColour2 = '#ffffff' // the body colour of bird2
+let beakColour2 = '#fa8d69' // orange colour on face/beak of bird2
+let featherColour2 = '#b8afad' // the grey colour on bird2
+let darkColour2 = '#141212' // dark colour on bird2
+let strokeColour2 = '#183e61' // changes stroke colour of bird2
+
+let backColour = '#48b2c2' // changes background colour
+
+let flamX = 50 // moves flamingo left and right
+let flamY = 50 //  moves flamingo up and down
+let flamFactor = 1 // scales flamingo up and down
+
+let flamColour = '#f598e4'
+let flamTip = '#212118'
+let flamBeak = '#ffffff'
+let flamOne = '#bdb182'
+let flamTwo = '#f5eed3'
+let flamHip = '#e07ece'
+
+let flamColour2 = '#ff0561'
+let flamTip2 = '#ff0561'
+let flamBeak2 = '#ff0561'
+let flamOne2 = '#ff0561'
+let flamTwo2 = '#ff0561'
+let flamHip2 = '#ff0561'
+
+/////////////////////////////////
+
+Wallpaper 9:
+
+//your parameter variables go here!
+let bodyX = 140; // move bird left and right
+let bodyY = 115; //  move bird up and down
+let scaleFactor = 0.8; // to increase/decrease size of bird
+
+let cubeX = 11; // move cube left and right
+let cubeY = 8; // move cube up and down
+let cubeFactor = 22; // to increase/decrease cube size
+
+
+let baseColour = '#b3e4e6'; // base colour of cube
+let shadeColour = '#4dacb0'; // darker colour of cube
+let highlightColour = '#dff4f5'; // lightest colour of cube
+
+let insideCircle = '#c2ffff' // inside circle
+let outlineCircle = '#07525e' // outline darkest part of circle
+let bubbleCircles = '#1a8b9c' //  the four circle or bubbles
+
+let circleX = 100; // moves circle pattern left and right
+let circleY = 80; //  moves circle pattern up and down
+let scaleCircle = 20; // scales up or down the largest circle
+
+let fourX = 50; //  mvoes four circles left and right
+let fourY = 50; // moves four circles up and down
+let fourCircleW = 55; // changes width of four circles
+let fourCircleL = 55; // changes length of four circles
+
+let pattern2 = false; // if true creates a pattern
+
+let pattern3 = false; // if true creates pattern 2
+
+let pattern4 = false; // if true creates pattern 4
+
+let pattern5 = false; // if true creates pattern 5
+
+let pattern6 = false; // if true creates pattern 6
+
+let pattern7 = false; // if true creates pattern 7
+
+let pattern8 = false; // if true creates pattern 8
+
+let pattern9 = true; // if true creates pattern 9
+
+let blueColour = true; // if false changes to blue
+
+let bodyColour = '#ffffff' // the body colour of bird
+let beakColour = '#fa8d69' // orange colour on face/beak of bird
+let featherColour = '#b8afad' // the grey colour on bird
+let darkColour = '#141212' // dark colour on bird
+let strokeColour = '#183e61' // changes stroke colour of bird
+
+let bodyColour2 = '#ffffff' // the body colour of bird2
+let beakColour2 = '#fa8d69' // orange colour on face/beak of bird2
+let featherColour2 = '#b8afad' // the grey colour on bird2
+let darkColour2 = '#141212' // dark colour on bird2
+let strokeColour2 = '#183e61' // changes stroke colour of bird2
+
+let backColour = '#48b2c2' // changes background colour
+
+let flamX = 50 // moves flamingo left and right
+let flamY = 50 //  moves flamingo up and down
+let flamFactor = 1 // scales flamingo up and down
+
+let flamColour = '#f598e4'
+let flamTip = '#212118'
+let flamBeak = '#ffffff'
+let flamOne = '#bdb182'
+let flamTwo = '#f5eed3'
+let flamHip = '#e07ece'
+
+let flamColour2 = '#ff0561'
+let flamTip2 = '#ff0561'
+let flamBeak2 = '#ff0561'
+let flamOne2 = '#ff0561'
+let flamTwo2 = '#ff0561'
+let flamHip2 = '#ff0561'

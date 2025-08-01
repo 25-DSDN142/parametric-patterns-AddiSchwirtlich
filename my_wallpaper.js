@@ -5,7 +5,7 @@ let scaleFactor = 0.8; // to increase/decrease size of bird
 
 let cubeX = 11; // move cube left and right
 let cubeY = 8; // move cube up and down
-let cubeFactor = 22; // to increase/decrease cube size
+let cubeFactor = 25; // to increase/decrease cube size
 
 
 let baseColour = '#b3e4e6'; // base colour of cube
@@ -25,7 +25,7 @@ let fourY = 50; // moves four circles up and down
 let fourCircleW = 55; // changes width of four circles
 let fourCircleL = 55; // changes length of four circles
 
-let pattern2 = false; // if true creates a pattern (IF STATEMENT FOUND ON LINE 81)
+let pattern2 = false; // if true creates a pattern
 
 let pattern3 = false; // if true creates pattern 2
 
@@ -39,9 +39,9 @@ let pattern7 = false; // if true creates pattern 7
 
 let pattern8 = false; // if true creates pattern 8
 
-let pattern9 = true; // if true creates pattern 9
+let pattern9 = false; // if true creates pattern 9
 
-let blueColour = true; // if false changes to blue (IF STATEMENT FOUND ON LINE 44)
+let blueColour = true; // if false changes to blue
 
 let bodyColour = '#ffffff' // the body colour of bird
 let beakColour = '#fa8d69' // orange colour on face/beak of bird
@@ -75,6 +75,8 @@ let flamOne2 = '#ff0561'
 let flamTwo2 = '#ff0561'
 let flamHip2 = '#ff0561'
 
+
+// if statements mainly for colours of patterns
 
 // colours for pattern cubefactor > 25
 if (cubeFactor > 24){
@@ -211,7 +213,28 @@ if (pattern8) {
   flamHip = '#d62b42'
 
 }
+// colour palette for pattern 9
+if (pattern9) {
+  //
+}// colour palette for pattern 9
+if (pattern9) {
+  backColour = '#e66374'
+  outlineCircle = '#ff6177'
+  insideCircle = '#ffa1ad'
 
+  flamColour = '#fc445c'
+  flamTip = '#212118'
+  flamBeak = '#ffffff'
+  flamOne = '#bdb182'
+  flamTwo = '#f5eed3'
+  flamHip = '#d62b42'
+
+  bodyColour = '#ffebed'
+  beakColour = '#cc767f'
+  featherColour = '#c7a9ac'
+  darkColour = '#42070e'
+  strokeColour = '#183e61'
+}// colour palette for pattern 9
 if (pattern9) {
   backColour = '#e66374'
   outlineCircle = '#ff6177'
@@ -232,13 +255,11 @@ if (pattern9) {
 }
 
 
-// if statements found on line 90 and 192
-
 function setup_wallpaper(pWallpaper) {
   //pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
   
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_PORTRAIT);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -388,7 +409,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   }
 
-  if (cubeFactor > 24)  {
+  if (cubeFactor > 24) {
 
     DrawCube(5,5,25);
 
@@ -625,15 +646,30 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     DrawFlamingo(-390,320,0.3)
 
 
+    backColour = '#e66374'
+    outlineCircle = '#ff6177'
+    insideCircle = '#ffa1ad'
+
+    flamColour = '#fc445c'
+    flamTip = '#212118'
+    flamBeak = '#ffffff'
+    flamOne = '#bdb182'
+    flamTwo = '#f5eed3'
+    flamHip = '#d62b42'
+
+    bodyColour = '#ffebed'
+    beakColour = '#cc767f'
+    featherColour = '#c7a9ac'
+    darkColour = '#42070e'
+    strokeColour = '#183e61'
+
   }
-
-
 }
   
 
 function DrawBird(bodyX,bodyY,scaleFactor) {
 
-  stroke(strokeColour); // dark blue
+  stroke(strokeColour);
   strokeWeight(0.2);
 
   fill(bodyColour);
@@ -670,7 +706,7 @@ function DrawBird(bodyX,bodyY,scaleFactor) {
 
 
 
-  fill(beakColour);// orange colour
+  fill(beakColour);
 
   // shape of the orange pattern on bird
   beginShape();
@@ -684,7 +720,7 @@ function DrawBird(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
   
-  fill(featherColour);// grey colour
+  fill(featherColour);
 
   // grey shading of the birds wings
   beginShape();
@@ -707,7 +743,7 @@ function DrawBird(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(darkColour);// black colour
+  fill(darkColour);
 
   // black colour patterning on bottom of birds wings
   beginShape();
@@ -773,11 +809,11 @@ function DrawBird(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  }
+}
 
 function DrawBird2(bodyX,bodyY,scaleFactor) {
 
-  stroke(strokeColour2); // dark blue
+  stroke(strokeColour2);
   strokeWeight(0.2);
 
   fill(bodyColour2);
@@ -814,7 +850,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
 
 
-  fill(beakColour2);// orange colour
+  fill(beakColour2);
 
   // shape of the orange pattern on bird
   beginShape();
@@ -851,7 +887,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(darkColour2);// black colour
+  fill(darkColour2);
 
   // black colour patterning on bottom of birds wings
   beginShape();
@@ -917,11 +953,11 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  }
+}
 
-  function DrawCube (cubeX,cubeY,cubeFactor) {
+function DrawCube (cubeX,cubeY,cubeFactor) {
 
-  fill(baseColour); // outside rim colour of top portion of cube
+  fill(baseColour);
 
 
   strokeWeight(0);
@@ -938,7 +974,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(shadeColour); // shaded colour
+  fill(shadeColour);
 
   beginShape();
 
@@ -949,7 +985,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(highlightColour); // highlight colour
+  fill(highlightColour);
 
   beginShape();
 
@@ -971,7 +1007,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(shadeColour); // green colour
+  fill(shadeColour);
 
   beginShape();
 
@@ -982,7 +1018,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(baseColour); // blue colour
+  fill(baseColour);
 
   beginShape();
 
@@ -993,7 +1029,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(highlightColour); // hot pink colour
+  fill(highlightColour);
 
   beginShape();
 
@@ -1004,7 +1040,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(shadeColour); // yellow colour
+  fill(shadeColour);
 
   beginShape();
 
@@ -1015,7 +1051,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(baseColour); // dark green colour
+  fill(baseColour);
 
   beginShape();
 
@@ -1026,7 +1062,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(highlightColour); // red colour
+  fill(highlightColour);
 
   beginShape();
 
@@ -1039,7 +1075,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   // patterning on the left hand side of cube
 
-  fill(highlightColour); // highlight colour
+  fill(highlightColour);
 
   beginShape();
 
@@ -1050,7 +1086,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(shadeColour); // light green
+  fill(shadeColour);
 
   beginShape();
 
@@ -1061,7 +1097,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(baseColour); // blue
+  fill(baseColour);
 
   beginShape();
 
@@ -1072,7 +1108,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(highlightColour); // hot pink
+  fill(highlightColour);
 
   beginShape();
 
@@ -1083,7 +1119,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(shadeColour); // yellow
+  fill(shadeColour);
 
   beginShape();
 
@@ -1094,7 +1130,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape();
 
-  fill(baseColour); // dark green
+  fill(baseColour);
 
   beginShape();
 
@@ -1105,7 +1141,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(highlightColour); // red
+  fill(highlightColour);
 
   beginShape();
 
@@ -1118,7 +1154,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   // patterning on the right side of cube
 
-  fill(shadeColour); // shaded colour
+  fill(shadeColour);
 
   beginShape();
 
@@ -1129,7 +1165,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(baseColour); // light green
+  fill(baseColour);
 
   beginShape();
 
@@ -1140,7 +1176,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(highlightColour); // blue
+  fill(highlightColour);
 
   beginShape();
 
@@ -1151,7 +1187,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(shadeColour); // hot pink
+  fill(shadeColour);
 
   beginShape();
 
@@ -1162,7 +1198,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(baseColour); // yellow
+  fill(baseColour);
 
   beginShape();
 
@@ -1173,7 +1209,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(highlightColour); // dark green
+  fill(highlightColour);
 
   beginShape();
 
@@ -1184,7 +1220,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  fill(shadeColour); // red
+  fill(shadeColour);
 
   beginShape();
 
@@ -1195,7 +1231,7 @@ function DrawBird2(bodyX,bodyY,scaleFactor) {
 
   endShape(CLOSE);
 
-  }
+}
   
 
   // circle pattern
@@ -1227,8 +1263,9 @@ function DrawFour (fourX,fourY,fourCircleW,fourCircleL)  {
 
 function DrawFlamingo (flamX,flamY,flamFactor)  {
 
-noStroke();
-fill(flamBeak);
+  noStroke();
+  fill(flamBeak);
+
   // beak of the flamingo
   beginShape();
 
@@ -1244,7 +1281,7 @@ fill(flamBeak);
 
   endShape(CLOSE);
 
-
+  // tip of the flamingos beak
   fill(flamTip);
   beginShape();
 
@@ -1290,7 +1327,7 @@ fill(flamBeak);
   endShape(CLOSE);
 
   fill(flamOne);
-  // first part of leg of flamingo
+  // first segment of bent flamingos leg
   beginShape();
 
     vertex((flamX + 49) * flamFactor,(flamY + 88) * flamFactor); // (99,138)
@@ -1300,7 +1337,7 @@ fill(flamBeak);
 
   endShape(CLOSE);
 
-  // second part of leg of flamingo
+  // second part of bent flamingos leg
   beginShape();
 
     vertex((flamX + 57) * flamFactor,(flamY + 119) * flamFactor); // (107,169)
@@ -1321,7 +1358,7 @@ fill(flamBeak);
   endShape(CLOSE);
 
   fill(flamHip);
-  // triangle leg shape for flamingo
+  // triangle hip of flamingo
   beginShape();
 
     vertex((flamX + 35) * flamFactor,(flamY + 76) * flamFactor); // (85,126)
@@ -1355,8 +1392,8 @@ fill(flamBeak);
 
 function DrawFlamingo2 (flamX,flamY,flamFactor)  {
 
-noStroke();
-fill(flamBeak2);
+  noStroke();
+  fill(flamBeak2);
   // beak of the flamingo
   beginShape();
 
@@ -1372,7 +1409,7 @@ fill(flamBeak2);
 
   endShape(CLOSE);
 
-
+  // tip of the flamingos beak
   fill(flamTip2);
   beginShape();
 
@@ -1418,7 +1455,7 @@ fill(flamBeak2);
   endShape(CLOSE);
 
   fill(flamOne2);
-  // first part of leg of flamingo
+  // first segment of bent flamingos leg
   beginShape();
 
     vertex((flamX + 49) * flamFactor,(flamY + 88) * flamFactor); // (99,138)
@@ -1428,7 +1465,7 @@ fill(flamBeak2);
 
   endShape(CLOSE);
 
-  // second part of leg of flamingo
+  // second segment of bent flamingos leg
   beginShape();
 
     vertex((flamX + 57) * flamFactor,(flamY + 119) * flamFactor); // (107,169)
@@ -1449,7 +1486,7 @@ fill(flamBeak2);
   endShape(CLOSE);
 
   fill(flamHip2);
-  // triangle leg shape for flamingo
+  // triangle hip of flamingo
   beginShape();
 
     vertex((flamX + 35) * flamFactor,(flamY + 76) * flamFactor); // (85,126)
